@@ -1,210 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FFEA9805-78D9-44A7-871F-E735518048D2}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Esha.Genesis.Services.Client</RootNamespace>
-    <AssemblyName>Esha.Genesis.Services.Client</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ActivityDto.cs" />
-    <Compile Include="ActivityLevel.cs" />
-    <Compile Include="AdditionalItemIngredientStatementSettingsDto.cs" />
-    <Compile Include="AllergenListRequest.cs" />
-    <Compile Include="AllergenListRequest1.cs" />
-    <Compile Include="AllergenListResponse.cs" />
-    <Compile Include="AllergenListResponse1.cs" />
-    <Compile Include="AllergenRuleDto.cs" />
-    <Compile Include="AllergenRuleType.cs" />
-    <Compile Include="AllergenStatementDto.cs" />
-    <Compile Include="AllergenStatementSettingsDto.cs" />
-    <Compile Include="AmountCostDto.cs" />
-    <Compile Include="AmountDto.cs" />
-    <Compile Include="AmountTarget.cs" />
-    <Compile Include="AnalysisDto.cs" />
-    <Compile Include="AnalysisOverrideDto.cs" />
-    <Compile Include="AuthoritiesListRequest.cs" />
-    <Compile Include="AuthoritiesListRequest1.cs" />
-    <Compile Include="AuthoritiesListResponse.cs" />
-    <Compile Include="AuthoritiesListResponse1.cs" />
-    <Compile Include="AuthorityDto.cs" />
-    <Compile Include="BatchSizeDto.cs" />
-    <Compile Include="Bioactivity.cs" />
-    <Compile Include="BrandDto.cs" />
-    <Compile Include="ConditionDto.cs" />
-    <Compile Include="ConsumerDto.cs" />
-    <Compile Include="ConversionDto.cs" />
-    <Compile Include="ConversionMapDto.cs" />
-    <Compile Include="ConversionsRootDto.cs" />
-    <Compile Include="DailyValueDto.cs" />
-    <Compile Include="DietRecallDto.cs" />
-    <Compile Include="Dimension.cs" />
-    <Compile Include="EditError.cs" />
-    <Compile Include="EshaDto.cs" />
-    <Compile Include="FoodAnalysisRequest.cs" />
-    <Compile Include="FoodAnalysisRequest1.cs" />
-    <Compile Include="FoodAnalysisResponse.cs" />
-    <Compile Include="FoodAnalysisResponse1.cs" />
-    <Compile Include="FoodConversionsResponse.cs" />
-    <Compile Include="FoodConversionsResponse1.cs" />
-    <Compile Include="FoodDto.cs" />
-    <Compile Include="FoodEditServiceClient.cs" />
-    <Compile Include="FoodItemDto.cs" />
-    <Compile Include="FoodMetadataRequest.cs" />
-    <Compile Include="FoodMetadataRequest1.cs" />
-    <Compile Include="FoodMetadataResponse.cs" />
-    <Compile Include="FoodMetadataResponse1.cs" />
-    <Compile Include="FoodQueryServiceClient.cs" />
-    <Compile Include="FoodsByGroupRequest.cs" />
-    <Compile Include="FoodsByGroupRequest1.cs" />
-    <Compile Include="FoodsByModifiedDateRangeRequest.cs" />
-    <Compile Include="FoodsByModifiedDateRangeRequest1.cs" />
-    <Compile Include="FoodsByNameRequest.cs" />
-    <Compile Include="FoodsByNameRequest1.cs" />
-    <Compile Include="FoodsByPropertyRequest.cs" />
-    <Compile Include="FoodsByPropertyRequest1.cs" />
-    <Compile Include="FoodsListRequest.cs" />
-    <Compile Include="FoodsListRequest1.cs" />
-    <Compile Include="FoodsListResponse.cs" />
-    <Compile Include="FoodsListResponse1.cs" />
-    <Compile Include="FoodsSearchRequest.cs" />
-    <Compile Include="FoodsSearchRequest1.cs" />
-    <Compile Include="FoodType.cs" />
-    <Compile Include="FoodUserCodesListRequest.cs" />
-    <Compile Include="FoodUserCodesListRequest1.cs" />
-    <Compile Include="FoodUserCodesListResponse.cs" />
-    <Compile Include="FoodUserCodesListResponse1.cs" />
-    <Compile Include="Gender.cs" />
-    <Compile Include="GetFoodByFoodIdRequest.cs" />
-    <Compile Include="GetFoodByFoodIdRequest1.cs" />
-    <Compile Include="GetFoodByUserCodeRequest.cs" />
-    <Compile Include="GetFoodByUserCodeRequest1.cs" />
-    <Compile Include="GlobalString.cs" />
-    <Compile Include="GroupDto.cs" />
-    <Compile Include="GroupsListRequest.cs" />
-    <Compile Include="GroupsListRequest1.cs" />
-    <Compile Include="GroupsListResponse.cs" />
-    <Compile Include="GroupsListResponse1.cs" />
-    <Compile Include="GroupType.cs" />
-    <Compile Include="HeaderTextOptionDto.cs" />
-    <Compile Include="IFoodEditService.cs" />
-    <Compile Include="IFoodEditServiceChannel.cs" />
-    <Compile Include="IFoodQueryService.cs" />
-    <Compile Include="IFoodQueryServiceChannel.cs" />
-    <Compile Include="ILabelImageService.cs" />
-    <Compile Include="ILabelImageServiceChannel.cs" />
-    <Compile Include="ImageByFoodIdRequest.cs" />
-    <Compile Include="ImageByFoodIdRequest1.cs" />
-    <Compile Include="ImageByUserCodeRequest.cs" />
-    <Compile Include="ImageByUserCodeRequest1.cs" />
-    <Compile Include="ImageModelDto.cs" />
-    <Compile Include="ImageRequest.cs" />
-    <Compile Include="ImageRequest1.cs" />
-    <Compile Include="ImageResponse.cs" />
-    <Compile Include="ImageResponse1.cs" />
-    <Compile Include="IngredientDto.cs" />
-    <Compile Include="IngredientSourceDto.cs" />
-    <Compile Include="IngredientStatementCompositionBehavior.cs" />
-    <Compile Include="IngredientStatementDto.cs" />
-    <Compile Include="IngredientStatementItemDto.cs" />
-    <Compile Include="IngredientStatementSettingsDto.cs" />
-    <Compile Include="IntakeDto.cs" />
-    <Compile Include="ItemAnalysisDto.cs" />
-    <Compile Include="JournalDto.cs" />
-    <Compile Include="JournalEntryDto.cs" />
-    <Compile Include="LabelDto.cs" />
-    <Compile Include="LabelImageServiceClient.cs" />
-    <Compile Include="LabelNutrientDto.cs" />
-    <Compile Include="LabelRuleDto.cs" />
-    <Compile Include="LabelSettingsDto.cs" />
-    <Compile Include="MealDto.cs" />
-    <Compile Include="MealTypeDto.cs" />
-    <Compile Include="NewFoodRequest.cs" />
-    <Compile Include="NewFoodRequest1.cs" />
-    <Compile Include="NewFoodResponse.cs" />
-    <Compile Include="NewFoodResponse1.cs" />
-    <Compile Include="NutrientDto.cs" />
-    <Compile Include="NutrientInfoDto.cs" />
-    <Compile Include="NutrientListRequest.cs" />
-    <Compile Include="NutrientListRequest1.cs" />
-    <Compile Include="NutrientListResponse.cs" />
-    <Compile Include="NutrientListResponse1.cs" />
-    <Compile Include="NutrientProfileDto.cs" />
-    <Compile Include="NutrientQuantityDto.cs" />
-    <Compile Include="NutrientTransformDto.cs" />
-    <Compile Include="NutrientTransformType.cs" />
-    <Compile Include="PersonDto.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="PropertyFilter.cs" />
-    <Compile Include="PublicationState.cs" />
-    <Compile Include="PureFoodDto.cs" />
-    <Compile Include="PureFoodItemDto.cs" />
-    <Compile Include="QuantityDto.cs" />
-    <Compile Include="QuantityType.cs" />
-    <Compile Include="RecipeDto.cs" />
-    <Compile Include="RecommendationDto.cs" />
-    <Compile Include="RecommendationProfileDto.cs" />
-    <Compile Include="RecommendationProfilesListRequest.cs" />
-    <Compile Include="RecommendationProfilesListRequest1.cs" />
-    <Compile Include="RecommendationProfilesListResponse.cs" />
-    <Compile Include="RecommendationProfilesListResponse1.cs" />
-    <Compile Include="RecommendationType.cs" />
-    <Compile Include="ResultStatus.cs" />
-    <Compile Include="StandardMealTypes.cs" />
-    <Compile Include="StandardNutrients.cs" />
-    <Compile Include="StandardUnits.cs" />
-    <Compile Include="StatementBaseDto.cs" />
-    <Compile Include="StatementSettingsBaseDto.cs" />
-    <Compile Include="StatusMessage.cs" />
-    <Compile Include="SupplementFoodItemDto.cs" />
-    <Compile Include="SupplementFormulaDto.cs" />
-    <Compile Include="SupplementFormulaFoodItemDto.cs" />
-    <Compile Include="SupplementIngredientDto.cs" />
-    <Compile Include="UnitDto.cs" />
-    <Compile Include="UnitListRequest.cs" />
-    <Compile Include="UnitListRequest1.cs" />
-    <Compile Include="UnitListResponse.cs" />
-    <Compile Include="UnitListResponse1.cs" />
-    <Compile Include="UpdateFoodRequest.cs" />
-    <Compile Include="UpdateFoodRequest1.cs" />
-    <Compile Include="UpdateFoodResponse.cs" />
-    <Compile Include="UpdateFoodResponse1.cs" />
-    <Compile Include="WorkingNutrientsDto.cs" />
-    <Compile Include="XmlDateTimeOffset.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <TargetFramework>net471</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageId>Esha.Genesis.Services.Client</PackageId>
+        <Copyright>Copyright © ESHA Research 2018</Copyright>
+        <Company>ESHA Research</Company>
+        <Description>Client library for ESHA Research Genesis API</Description>
+        <RepositoryUrl>https://github.com/esha/freyr</RepositoryUrl>
+        <Authors>ESHA Research</Authors>
+        <RepositoryType></RepositoryType>
+        <PackageLicenseUrl>https://github.com/esha/freyr/blob/master/LICENSE</PackageLicenseUrl>
+        <SignAssembly>false</SignAssembly>
+        <AssemblyOriginatorKeyFile>EshaDev.snk</AssemblyOriginatorKeyFile>
+    </PropertyGroup>
+    <ItemGroup>
+      <Reference Include="System.ServiceModel" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Properties\" />
+    </ItemGroup>
 </Project>
