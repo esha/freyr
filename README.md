@@ -1,5 +1,46 @@
 # Client Library Documentation
 
+# Add to App.config
+```
+<system.serviceModel>
+    <bindings>
+        <wsHttpBinding>
+            <binding name="WSHttpBinding_IFoodEditService"
+                     maxReceivedMessageSize="20000000"
+                     maxBufferPoolSize="20000000"
+                     >
+                <security mode="None" />
+            </binding>
+            <binding name="WSHttpBinding_IFoodQueryService"
+                     maxReceivedMessageSize="20000000"
+                     maxBufferPoolSize="20000000">
+                <security mode="None" />
+            </binding>
+            <binding name="WSHttpBinding_ILabelImageService"
+                     maxReceivedMessageSize="20000000"
+                     maxBufferPoolSize="20000000">
+                <security mode="None" />
+            </binding>
+        </wsHttpBinding>
+    </bindings>
+    <client>
+        <endpoint address="http://localhost:80/soap/FoodEditService.svc"
+                  binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IFoodEditService"
+                  contract="Esha.Genesis.Services.Client.IFoodEditService"
+                  name="WSHttpBinding_IFoodEditService" />
+        <endpoint address="http://localhost:80/soap/FoodQueryService.svc"
+                  binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_IFoodQueryService"
+                  contract="Esha.Genesis.Services.Client.IFoodQueryService"
+                  name="WSHttpBinding_IFoodQueryService" />
+        <endpoint address="http://localhost:80/SOAP/LabelImageService.svc"
+                  binding="wsHttpBinding" bindingConfiguration="WSHttpBinding_ILabelImageService"
+                  contract="Esha.Genesis.Services.Client.ILabelImageService"
+                  name="WSHttpBinding_ILabelImageService" />
+    </client>
+</system.serviceModel>
+```
+
+# Client Library Examples
 ```
 /**********************************************************************************************************
 * FoodQueryService
