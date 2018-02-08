@@ -637,8 +637,8 @@ var newFoodResponse = foodEditServiceClient.NewFood(newFoodRequest);
 var foodEditServiceClient = new FoodEditServiceClient();
 
 var recipe = new RecipeDto();
-recipe.Name = new [] { new GlobalString() { Language = "en-US", Value = "New Ingredient1" } };
-recipe.CommonName = new[] { new GlobalString() { Language = "en-US", Value = "Ingredient" } };
+recipe.Name = new [] { new GlobalString() { Language = "en-US", Value = "New Recipe" } };
+recipe.CommonName = new[] { new GlobalString() { Language = "en-US", Value = "Recipe" } };
 recipe.UserCode = "1414-3";
 recipe.Description = new[] { new GlobalString() { Language = "en-US", Value = "Description" } };
 recipe.UsdaCode = 1234;
@@ -782,8 +782,8 @@ var foodEditServiceClient = new FoodEditServiceClient();
 
 var recipe = new RecipeDto();
 recipe.Id = Guid.Parse("d6e1c25c-45ea-00e3-575f-443582096cec");  // Existing Item in Database
-recipe.Name = new [] { new GlobalString() { Language = "en-US", Value = "New Ingredient1" } };
-recipe.CommonName = new[] { new GlobalString() { Language = "en-US", Value = "Ingredient" } };
+recipe.Name = new [] { new GlobalString() { Language = "en-US", Value = "New Recipe" } };
+recipe.CommonName = new[] { new GlobalString() { Language = "en-US", Value = "Recipe" } };
 recipe.UserCode = "1414-3";
 recipe.Description = new[] { new GlobalString() { Language = "en-US", Value = "Description" } };
 recipe.UsdaCode = 1234;
