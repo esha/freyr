@@ -12,7 +12,6 @@
         <RepositoryType></RepositoryType>
         <PackageLicenseUrl>https://github.com/esha/freyr/blob/master/LICENSE</PackageLicenseUrl>
         <SignAssembly>false</SignAssembly>
-        <AssemblyOriginatorKeyFile>EshaDev.snk</AssemblyOriginatorKeyFile>
     </PropertyGroup>
     <ItemGroup>
       <Reference Include="System.ServiceModel" />
