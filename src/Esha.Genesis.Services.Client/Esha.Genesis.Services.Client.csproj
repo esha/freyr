@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFramework>net471</TargetFramework>
+        <TargetFramework>netstandard1.6</TargetFramework>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Esha.Genesis.Services.Client</PackageId>
         <Copyright>Copyright © ESHA Research 2018</Copyright>
@@ -12,11 +12,17 @@
         <RepositoryType></RepositoryType>
         <PackageLicenseUrl>https://github.com/esha/freyr/blob/master/LICENSE</PackageLicenseUrl>
         <SignAssembly>false</SignAssembly>
+        <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+        <PackageProjectUrl>https://github.com/esha/freyr</PackageProjectUrl>
+        <PackageTags>ESHA Genesis</PackageTags>
     </PropertyGroup>
     <ItemGroup>
-      <Reference Include="System.ServiceModel" />
+      <Folder Include="Properties\" />
     </ItemGroup>
     <ItemGroup>
-      <Folder Include="Properties\" />
+      <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
+      <PackageReference Include="System.ServiceModel.Primitives" Version="4.4.1" />
+      <PackageReference Include="System.Xml.XmlDocument" Version="4.3.0" />
+      <PackageReference Include="System.Xml.XmlSerializer" Version="4.3.0" />
     </ItemGroup>
 </Project>
