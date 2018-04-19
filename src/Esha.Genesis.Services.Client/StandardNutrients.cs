@@ -155,7 +155,7 @@ namespace Esha.Genesis.Services.Client
         FolicAcid,
 
         /// <remarks />
-        FolateDfe,
+        FolateDFE,
 
         /// <remarks />
         FolateFood,
