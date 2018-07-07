@@ -1,7 +1,9 @@
 ﻿using System;
 using System.CodeDom.Compiler;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
+using System.Linq;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
@@ -12,6 +14,8 @@ namespace Esha.Genesis.Services.Client
     [GeneratedCode("System.ServiceModel", "4.0.0.0")]
     public class FoodQueryServiceClient : ClientBase<IFoodQueryService>, IFoodQueryService
     {
+        private IDictionary<Guid, NutrientDto> _nutrientDictionary;
+
         public FoodQueryServiceClient()
         {
         }
@@ -149,16 +153,30 @@ namespace Esha.Genesis.Services.Client
 
         public FoodAnalysisResponse GetAnalysis(FoodAnalysisRequest foodAnalysisRequest)
         {
+            if (_nutrientDictionary is null)
+            {
+                var nutRetVal = ((IFoodQueryService)this).ListNutrients(new NutrientListRequest1 { NutrientListRequest = new NutrientListRequest() });
+                _nutrientDictionary = createNutrientDictionary(nutRetVal);
+            }
+
             var inValue = new FoodAnalysisRequest1 {FoodAnalysisRequest = foodAnalysisRequest};
             var retVal = ((IFoodQueryService)this).GetAnalysis(inValue);
-            return retVal.FoodAnalysisResponse;
+            
+            return processFoodAnalysisResponse(retVal.FoodAnalysisResponse);
         }
 
         public async Task<FoodAnalysisResponse> GetAnalysisAsync(FoodAnalysisRequest foodAnalysisRequest)
         {
+            if (_nutrientDictionary is null)
+            {
+                var nutRetVal = await ((IFoodQueryService)this).ListNutrientsAsync(new NutrientListRequest1 { NutrientListRequest = new NutrientListRequest() });
+                _nutrientDictionary = createNutrientDictionary(nutRetVal);
+            }
+
             var inValue = new FoodAnalysisRequest1 {FoodAnalysisRequest = foodAnalysisRequest};
             var retVal = await ((IFoodQueryService)this).GetAnalysisAsync(inValue);
-            return retVal.FoodAnalysisResponse;
+
+            return processFoodAnalysisResponse(retVal.FoodAnalysisResponse);
         }
 
         public FoodConversionsResponse GetConversions(FoodMetadataRequest foodMetadataRequest)
@@ -398,5 +416,51 @@ namespace Esha.Genesis.Services.Client
             var retVal = await ((IFoodQueryService)this).SearchByPropertyAsync(inValue);
             return retVal.FoodsListResponse;
         }
+
+        private IDictionary<Guid, NutrientDto> createNutrientDictionary(NutrientListResponse1 nutrientListResponse1)
+        {
+            var nutrients = nutrientListResponse1?.NutrientListResponse?.Nutrients;
+
+            return nutrients?.ToDictionary(n => n.Id.Value, n => n);
+        }
+
+        private FoodAnalysisResponse processFoodAnalysisResponse(FoodAnalysisResponse analysisResponse)
+        {
+            var analyses = analysisResponse?.Food?.Analyses;
+            if (analyses is null)
+            {
+                return analysisResponse;
+            }
+
+            var nutrientInfoDtos = analyses.Select(getNutrientInfoDtos).SelectMany(l => l);
+
+            foreach (var nutrientInfoDto in nutrientInfoDtos)
+            {
+                var nutrientId = nutrientInfoDto.NutrientId;
+                nutrientInfoDto.UnitId = !_nutrientDictionary?.ContainsKey(nutrientId) ?? false
+                    ? null : _nutrientDictionary[nutrientId].UnitId;
+            }
+
+            return analysisResponse;
+        }
+
+        private IEnumerable<NutrientInfoDto> getNutrientInfoDtos(AnalysisDto analysis)
+        {
+            if (analysis?.GrossNutrientValues is null || analysis?.NetNutrientValues is null)
+            {
+                return new List<NutrientInfoDto>();
+            }
+
+            var grossNutrients = analysis.GrossNutrientValues;
+            var allNutrients = grossNutrients.Zip(analysis.NetNutrientValues, (g, n) => new[] {g, n})
+                .SelectMany(a => a);
+
+            var itemNutrients = analysis.ItemAnalyses?.Select(i => getNutrientInfoDtos(i.Analysis)).SelectMany(a => a)
+                                ?? new List<NutrientInfoDto>();
+
+            return allNutrients.Concat(itemNutrients);
+        }
+
+
     }
 }

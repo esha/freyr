@@ -24,6 +24,8 @@ namespace Esha.Genesis.Services.Client
 
         private QuantityDto _weightField;
 
+        private Guid? _unitIdField;
+
         /// <remarks />
         [XmlElement]
         public QuantityDto Unknown
@@ -70,6 +72,14 @@ namespace Esha.Genesis.Services.Client
         {
             get => _quantityField;
             set => _quantityField = value;
+        }
+
+        /// <remarks />
+        [XmlElement(IsNullable = true)]
+        public Guid? UnitId
+        {
+            get => _unitIdField;
+            set => _unitIdField = value;
         }
     }
 }
