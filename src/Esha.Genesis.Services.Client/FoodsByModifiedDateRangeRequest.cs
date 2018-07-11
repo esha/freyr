@@ -18,6 +18,8 @@ namespace Esha.Genesis.Services.Client
 
         private PublicationState[] _filterByPublicationStatesField;
 
+        private String[] _dataSourceFilterField;
+
         private Int32? _pageSizeField;
 
         private XmlDateTimeOffset _startField;
@@ -54,6 +56,15 @@ namespace Esha.Genesis.Services.Client
         {
             get => _filterByPublicationStatesField;
             set => _filterByPublicationStatesField = value;
+        }
+
+        /// <remarks />
+        [XmlArray]
+        [XmlArrayItem("DataSource")]
+        public String[] DataSourceFilter
+        {
+            get => _dataSourceFilterField;
+            set => _dataSourceFilterField = value;
         }
 
         /// <remarks />

@@ -202,6 +202,16 @@ var foodsListRequest = new FoodsListRequest
 };
 var foodsListResponse = foodQueryServiceClient.ListFoods(foodsListRequest);
 
+// All User Created Ingredients
+var foodQueryServiceClient = new FoodQueryServiceClient();
+var foodsListRequest = new FoodsListRequest
+{
+    FilterByPublicationStates = new[] { PublicationState.Draft, PublicationState.Published },
+    FilterByFoodTypes = new[] {FoodType.Ingredient},
+    DataSourceFilter = new[] {"UserFoods"}
+};
+var foodsListResponse = foodQueryServiceClient.ListFoods(foodsListRequest);
+
 /**********************************************************************************************************
 * ListFoodUserCodes
 **********************************************************************************************************/
@@ -235,6 +245,16 @@ var foodUserCodesListRequest = new FoodUserCodesListRequest
     FilterByFoodTypes = new[] {FoodType.Ingredient},
     StartIndex = 1,
     PageSize = 10
+};
+var foodUserCodesListResponse = foodQueryServiceClient.ListFoodUserCodes(foodUserCodesListRequest);
+
+// All Esha Created Ingredients User Codes
+var foodQueryServiceClient = new FoodQueryServiceClient();
+var foodUserCodesListRequest = new FoodUserCodesListRequest
+{
+    FilterByPublicationStates = new[] { PublicationState.Draft, PublicationState.Published },
+    FilterByFoodTypes = new[] {FoodType.Ingredient},
+    DataSourceFilter = new[] {"EshaFoods"}
 };
 var foodUserCodesListResponse = foodQueryServiceClient.ListFoodUserCodes(foodUserCodesListRequest);
 
@@ -340,6 +360,29 @@ var foodsSearchRequest = new FoodsSearchRequest
 };
 var foodsListResponse = foodQueryServiceClient.Search(foodsSearchRequest);
 
+// First 10 Recipes foods that match the search criteria 
+var foodQueryServiceClient = new FoodQueryServiceClient();
+var foodsSearchRequest = new FoodsSearchRequest
+{
+    SearchText = "Oats",
+    FilterByFoodTypes = new[] {FoodType.Recipe},
+    StartIndex = 1,
+    PageSize = 10
+};
+var foodsListResponse = foodQueryServiceClient.Search(foodsSearchRequest);
+
+// All user ceated Recipes that mach the search criteria
+var foodQueryServiceClient = new FoodQueryServiceClient();
+var foodsSearchRequest = new FoodsSearchRequest
+{
+    SearchText = "Oats",
+    FilterByFoodTypes = new[] {FoodType.Recipe},
+    DataSourceFilter = new [] {"UserFoods"},
+    StartIndex = 1,
+    PageSize = 10
+};
+var foodsListResponse = foodQueryServiceClient.Search(foodsSearchRequest);
+
 /**********************************************************************************************************
 * SearchByGroups
 **********************************************************************************************************/
@@ -378,6 +421,19 @@ var foodsByGroupRequest = new FoodsByGroupRequest
     GroupName = "Vegan Foods",
     FilterByPublicationStates = new [] {PublicationState.Draft, PublicationState.Published },
     FilterByFoodTypes = new [] {FoodType.Recipe},
+    StartIndex = 1,
+    PageSize = 10
+};
+var foodsListResponse = foodQueryServiceClient.SearchByGroup(foodsByGroupRequest);
+
+// Get First 10 user created Recipes in Group
+var foodQueryServiceClient = new FoodQueryServiceClient();
+var foodsByGroupRequest = new FoodsByGroupRequest
+{
+    GroupName = "Vegan Foods",
+    FilterByPublicationStates = new [] {PublicationState.Draft, PublicationState.Published },
+    FilterByFoodTypes = new [] {FoodType.Recipe},
+    DataSourceFilter = new [] {"UserFoods"},
     StartIndex = 1,
     PageSize = 10
 };
@@ -434,6 +490,20 @@ var foodsByModifiedDateRangeRequest = new FoodsByModifiedDateRangeRequest
 };
 var foodsListResponse = foodQueryServiceClient.SearchByModifiedDateRange(foodsByModifiedDateRangeRequest);
 
+// First 10 user created Ingredients Modified Between two Dates
+var foodQueryServiceClient = new FoodQueryServiceClient();
+var foodsByModifiedDateRangeRequest = new FoodsByModifiedDateRangeRequest
+{
+    Start = new XmlDateTimeOffset { DateTime = new DateTime(2017, 1, 1), UtcOffsetInMinutes = 0},
+    End = new XmlDateTimeOffset { DateTime = new DateTime(2017, 12, 31), UtcOffsetInMinutes = 0 },
+    FilterByPublicationStates = new[] { PublicationState.Draft, PublicationState.Published },
+    FilterByFoodTypes = new[] { FoodType.Ingredient },
+    DataSourceFilter = new[] {"UserFoods"},
+    StartIndex = 1,
+    PageSize = 10
+};
+var foodsListResponse = foodQueryServiceClient.SearchByModifiedDateRange(foodsByModifiedDateRangeRequest);
+
 /**********************************************************************************************************
 * SearchByName
 **********************************************************************************************************/
@@ -473,8 +543,21 @@ var foodsByNameRequest = new FoodsByNameRequest
 };
 var foodsListResponse = foodQueryServiceClient.SearchByName(foodsByNameRequest);
 
+// Get First 10 user created Recipes that match Pizza 
+var foodQueryServiceClient = new FoodQueryServiceClient();
+var foodsByNameRequest = new FoodsByNameRequest
+{
+    FoodName = "Pizza",
+    FilterByPublicationStates = new[] { PublicationState.Draft, PublicationState.Published },
+    FilterByFoodTypes = new[] { FoodType.Recipe },
+    DataSourceFilter = new [] {"UserFoods"},
+    StartIndex = 1,
+    PageSize =  10
+};
+var foodsListResponse = foodQueryServiceClient.SearchByName(foodsByNameRequest);
+
 /**********************************************************************************************************
-* SearchByProperty Not Relevant to Users
+* SearchByProperty Not Relevant to Users Currently
 **********************************************************************************************************/
 
 /**********************************************************************************************************

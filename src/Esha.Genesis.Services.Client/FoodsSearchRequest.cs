@@ -12,6 +12,12 @@ namespace Esha.Genesis.Services.Client
     [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi")]
     public class FoodsSearchRequest
     {
+        private FoodType[] _filterByFoodTypesField;
+
+        private PublicationState[] _filterByPublicationStatesField;
+
+        private String[] _dataSourceFilterField;
+
         private Int32? _pageSizeField;
 
         private String _searchTextField;
@@ -24,6 +30,31 @@ namespace Esha.Genesis.Services.Client
         {
             get => _searchTextField;
             set => _searchTextField = value;
+        }
+
+        /// <remarks />
+        [XmlArray]
+        public FoodType[] FilterByFoodTypes
+        {
+            get => _filterByFoodTypesField;
+            set => _filterByFoodTypesField = value;
+        }
+
+        /// <remarks />
+        [XmlArray]
+        public PublicationState[] FilterByPublicationStates
+        {
+            get => _filterByPublicationStatesField;
+            set => _filterByPublicationStatesField = value;
+        }
+
+        /// <remarks />
+        [XmlArray]
+        [XmlArrayItem("DataSource")]
+        public String[] DataSourceFilter
+        {
+            get => _dataSourceFilterField;
+            set => _dataSourceFilterField = value;
         }
 
         /// <remarks />
