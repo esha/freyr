@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.ServiceModel;
 using System.ServiceModel.Channels;
 using System.Threading.Tasks;
+using Esha.Genesis.Services.Client.Internal;
 
 namespace Esha.Genesis.Services.Client
 {
