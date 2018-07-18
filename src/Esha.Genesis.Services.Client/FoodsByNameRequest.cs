@@ -1,22 +1,19 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
 namespace Esha.Genesis.Services.Client
 {
     /// <remarks />
-    [GeneratedCode("svcutil", "4.6.1055.0")]
     [Serializable]
     [DebuggerStepThrough]
     [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi")]
     public class FoodsByNameRequest
     {
+        private String[] _dataSourceFilterField;
         private FoodType[] _filterByFoodTypesField;
 
         private PublicationState[] _filterByPublicationStatesField;
-
-        private String[] _dataSourceFilterField;
 
         private String _foodNameField;
 
@@ -26,7 +23,7 @@ namespace Esha.Genesis.Services.Client
 
         /// <remarks />
         [XmlArray]
-        public FoodType[] FilterByFoodTypes 
+        public FoodType[] FilterByFoodTypes
         {
             get => _filterByFoodTypesField;
             set => _filterByFoodTypesField = value;
