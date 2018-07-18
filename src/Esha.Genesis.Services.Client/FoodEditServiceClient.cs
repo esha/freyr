@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.ServiceModel;
@@ -10,7 +9,6 @@ using Esha.Genesis.Services.Client.Internal;
 namespace Esha.Genesis.Services.Client
 {
     [DebuggerStepThrough]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
     public class FoodEditServiceClient : ClientBase<IFoodEditService>, IFoodEditService
     {
         public FoodEditServiceClient()

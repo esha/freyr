@@ -1,19 +1,17 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Diagnostics;
 using System.Xml.Serialization;
 
-namespace Esha.Genesis.Services.Client 
+namespace Esha.Genesis.Services.Client
 {
-    /// <remarks/>
-    [GeneratedCode("svcutil", "4.6.1055.0")]
+    /// <remarks />
     [Serializable]
     [DebuggerStepThrough]
     [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi/label/image")]
-    public class ImageByUserCodeRequest 
+    public class ImageByUserCodeRequest
     {
-        /// <remarks/>
+        /// <remarks />
         [XmlElement(Namespace = "http://ns.esha.com/2013/genesisapi", Order = 0)]
-        public string UserCode { get; set; }
+        public String UserCode { get; set; }
     }
 }

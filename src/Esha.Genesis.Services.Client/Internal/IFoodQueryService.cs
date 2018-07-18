@@ -1,10 +1,8 @@
-﻿using System.CodeDom.Compiler;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using System.Threading.Tasks;
 
 namespace Esha.Genesis.Services.Client.Internal
 {
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
     [ServiceContract(Namespace = "http://ns.esha.com/2013/genesisapi", ConfigurationName = "Esha.Genesis.Services.Client.IFoodQueryService")]
     public interface IFoodQueryService
     {
@@ -38,21 +36,25 @@ namespace Esha.Genesis.Services.Client.Internal
         Task<FoodMetadataResponse1> GetFoodAsync(FoodMetadataRequest1 request);
 
         // CODEGEN: Generating message contract since the operation GetFoodByFoodId is neither RPC nor document wrapped.
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodid", ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodidresponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodid",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodidresponse")]
         [XmlSerializerFormat]
         [ServiceKnownType(typeof(EshaDto))]
         FoodMetadataResponse1 GetFoodByFoodId(GetFoodByFoodIdRequest1 request);
 
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodid", ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodidresponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodid",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyfoodidresponse")]
         Task<FoodMetadataResponse1> GetFoodByFoodIdAsync(GetFoodByFoodIdRequest1 request);
 
         // CODEGEN: Generating message contract since the operation GetFoodByUserCode is neither RPC nor document wrapped.
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyusercode", ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyusercoderesponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyusercode",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyusercoderesponse")]
         [XmlSerializerFormat]
         [ServiceKnownType(typeof(EshaDto))]
         FoodMetadataResponse1 GetFoodByUserCode(GetFoodByUserCodeRequest1 request);
 
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyusercode", ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyusercoderesponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/getfoodbyusercode",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/getfoodbyusercoderesponse")]
         Task<FoodMetadataResponse1> GetFoodByUserCodeAsync(GetFoodByUserCodeRequest1 request);
 
         // CODEGEN: Generating message contract since the operation ListAllergens is neither RPC nor document wrapped.

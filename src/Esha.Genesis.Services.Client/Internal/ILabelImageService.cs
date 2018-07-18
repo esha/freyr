@@ -1,10 +1,8 @@
-﻿using System.CodeDom.Compiler;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using System.Threading.Tasks;
 
 namespace Esha.Genesis.Services.Client.Internal
 {
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
     [ServiceContract(Namespace = "http://ns.esha.com/2013/genesisapi/label/image", ConfigurationName = "Esha.Genesis.Services.Client.ILabelImageService")]
     public interface ILabelImageService
     {
@@ -49,19 +47,23 @@ namespace Esha.Genesis.Services.Client.Internal
         Task<ImageResponse1> GetLabelImageByUserCodeAsync(ImageByUserCodeRequest1 request);
 
         // CODEGEN: Generating message contract since the operation GetBarcodeImageByFoodId is neither RPC nor document wrapped.
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodid", ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodidresponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodid",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodidresponse")]
         [XmlSerializerFormat]
         ImageResponse1 GetBarcodeImageByFoodId(ImageByFoodIdRequest1 request);
 
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodid", ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodidresponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodid",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyfoodidresponse")]
         Task<ImageResponse1> GetBarcodeImageByFoodIdAsync(ImageByFoodIdRequest1 request);
 
         // CODEGEN: Generating message contract since the operation GetBarcodeImageByUserCode is neither RPC nor document wrapped.
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercode", ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercoderesponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercode",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercoderesponse")]
         [XmlSerializerFormat]
         ImageResponse1 GetBarcodeImageByUserCode(ImageByUserCodeRequest1 request);
 
-        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercode", ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercoderesponse")]
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercode",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercoderesponse")]
         Task<ImageResponse1> GetBarcodeImageByUserCodeAsync(ImageByUserCodeRequest1 request);
     }
 }

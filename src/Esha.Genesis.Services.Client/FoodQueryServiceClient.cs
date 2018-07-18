@@ -1,5 +1,4 @@
 ﻿using System;
-using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -12,7 +11,6 @@ using Esha.Genesis.Services.Client.Internal;
 namespace Esha.Genesis.Services.Client
 {
     [DebuggerStepThrough]
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
     public class FoodQueryServiceClient : ClientBase<IFoodQueryService>, IFoodQueryService
     {
         private IDictionary<Guid, NutrientDto> _nutrientDictionary;
@@ -156,13 +154,13 @@ namespace Esha.Genesis.Services.Client
         {
             if (_nutrientDictionary is null)
             {
-                var nutRetVal = ((IFoodQueryService)this).ListNutrients(new NutrientListRequest1 { NutrientListRequest = new NutrientListRequest() });
+                var nutRetVal = ((IFoodQueryService)this).ListNutrients(new NutrientListRequest1 {NutrientListRequest = new NutrientListRequest()});
                 _nutrientDictionary = createNutrientDictionary(nutRetVal);
             }
 
             var inValue = new FoodAnalysisRequest1 {FoodAnalysisRequest = foodAnalysisRequest};
             var retVal = ((IFoodQueryService)this).GetAnalysis(inValue);
-            
+
             return processFoodAnalysisResponse(retVal.FoodAnalysisResponse);
         }
 
@@ -170,7 +168,7 @@ namespace Esha.Genesis.Services.Client
         {
             if (_nutrientDictionary is null)
             {
-                var nutRetVal = await ((IFoodQueryService)this).ListNutrientsAsync(new NutrientListRequest1 { NutrientListRequest = new NutrientListRequest() });
+                var nutRetVal = await ((IFoodQueryService)this).ListNutrientsAsync(new NutrientListRequest1 {NutrientListRequest = new NutrientListRequest()});
                 _nutrientDictionary = createNutrientDictionary(nutRetVal);
             }
 
@@ -190,7 +188,7 @@ namespace Esha.Genesis.Services.Client
         public async Task<FoodConversionsResponse> GetConversionsAsync(FoodMetadataRequest foodMetadataRequest)
         {
             var inValue = new FoodMetadataRequest1 {FoodMetadataRequest = foodMetadataRequest};
-            var retVal = await((IFoodQueryService)this).GetConversionsAsync(inValue);
+            var retVal = await ((IFoodQueryService)this).GetConversionsAsync(inValue);
             return retVal.FoodConversionsResponse;
         }
 
@@ -208,31 +206,31 @@ namespace Esha.Genesis.Services.Client
             return retVal.FoodMetadataResponse;
         }
 
-        public FoodMetadataResponse GetFoodByFoodId(Guid foodId) 
+        public FoodMetadataResponse GetFoodByFoodId(Guid foodId)
         {
             var inValue = new GetFoodByFoodIdRequest1 {GetFoodByFoodIdRequest = new GetFoodByFoodIdRequest {FoodId = foodId}};
-            var retVal = ((IFoodQueryService)(this)).GetFoodByFoodId(inValue);
+            var retVal = ((IFoodQueryService)this).GetFoodByFoodId(inValue);
             return retVal.FoodMetadataResponse;
         }
 
-        public async Task<FoodMetadataResponse> GetFoodByFoodIdAsync(Guid foodId) 
+        public async Task<FoodMetadataResponse> GetFoodByFoodIdAsync(Guid foodId)
         {
             var inValue = new GetFoodByFoodIdRequest1 {GetFoodByFoodIdRequest = new GetFoodByFoodIdRequest {FoodId = foodId}};
-            var retVal = await ((IFoodQueryService)(this)).GetFoodByFoodIdAsync(inValue);
+            var retVal = await ((IFoodQueryService)this).GetFoodByFoodIdAsync(inValue);
             return retVal.FoodMetadataResponse;
         }
 
-        public FoodMetadataResponse GetFoodByUserCode(String userCode) 
+        public FoodMetadataResponse GetFoodByUserCode(String userCode)
         {
             var inValue = new GetFoodByUserCodeRequest1 {GetFoodByUserCodeRequest = new GetFoodByUserCodeRequest {UserCode = userCode}};
-            var retVal = ((IFoodQueryService)(this)).GetFoodByUserCode(inValue);
+            var retVal = ((IFoodQueryService)this).GetFoodByUserCode(inValue);
             return retVal.FoodMetadataResponse;
         }
 
-        public async Task<FoodMetadataResponse> GetFoodByUserCodeAsync(String userCode) 
+        public async Task<FoodMetadataResponse> GetFoodByUserCodeAsync(String userCode)
         {
             var inValue = new GetFoodByUserCodeRequest1 {GetFoodByUserCodeRequest = new GetFoodByUserCodeRequest {UserCode = userCode}};
-            var retVal = await ((IFoodQueryService)(this)).GetFoodByUserCodeAsync(inValue);
+            var retVal = await ((IFoodQueryService)this).GetFoodByUserCodeAsync(inValue);
             return retVal.FoodMetadataResponse;
         }
 
@@ -327,7 +325,8 @@ namespace Esha.Genesis.Services.Client
             return retVal.RecommendationProfilesListResponse;
         }
 
-        public async Task<RecommendationProfilesListResponse> ListRecommendationProfilesAsync(RecommendationProfilesListRequest recommendationProfilesListRequest)
+        public async Task<RecommendationProfilesListResponse> ListRecommendationProfilesAsync(
+            RecommendationProfilesListRequest recommendationProfilesListRequest)
         {
             var inValue = new RecommendationProfilesListRequest1 {RecommendationProfilesListRequest = recommendationProfilesListRequest};
             var retVal = await ((IFoodQueryService)this).ListRecommendationProfilesAsync(inValue);
@@ -439,7 +438,8 @@ namespace Esha.Genesis.Services.Client
             {
                 var nutrientId = nutrientInfoDto.NutrientId;
                 nutrientInfoDto.UnitId = !_nutrientDictionary?.ContainsKey(nutrientId) ?? false
-                    ? null : _nutrientDictionary[nutrientId].UnitId;
+                    ? null
+                    : _nutrientDictionary[nutrientId].UnitId;
             }
 
             return analysisResponse;
@@ -461,7 +461,5 @@ namespace Esha.Genesis.Services.Client
 
             return allNutrients.Concat(itemNutrients);
         }
-
-
     }
 }

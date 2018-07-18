@@ -1,10 +1,8 @@
-﻿using System.CodeDom.Compiler;
-using System.ServiceModel;
+﻿using System.ServiceModel;
 using System.Threading.Tasks;
 
 namespace Esha.Genesis.Services.Client.Internal
 {
-    [GeneratedCode("System.ServiceModel", "4.0.0.0")]
     [ServiceContract(Namespace = "http://ns.esha.com/2013/genesisapi", ConfigurationName = "Esha.Genesis.Services.Client.IFoodEditService")]
     public interface IFoodEditService
     {
