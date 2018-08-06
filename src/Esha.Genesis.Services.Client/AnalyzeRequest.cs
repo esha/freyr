@@ -10,13 +10,13 @@ namespace Esha.Genesis.Services.Client
     [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi")]
     public class AnalyzeRequest
     {
-        private RecipeDto _recipeField;
+        private FoodDto _foodField;
 
         [XmlElement]
-        public RecipeDto Recipe
+        public FoodDto Food
         {
-            get => _recipeField;
-            set => _recipeField = value;
+            get => _foodField;
+            set => _foodField = value;
         }
     }
 }
