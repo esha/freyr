@@ -65,5 +65,15 @@ namespace Esha.Genesis.Services.Client.Internal
         [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercode",
             ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getbarcodeimagebyusercoderesponse")]
         Task<ImageResponse1> GetBarcodeImageByUserCodeAsync(ImageByUserCodeRequest1 request);
+
+        // CODEGEN: Generating message contract since the operation GetBarcodeImageByUserCode is neither RPC nor document wrapped.
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getlabelimageforfood",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getlabelimageforfoodresponse")]
+        [XmlSerializerFormat]
+        ImageResponse1 GetLabelImageForFood(ImageForFoodRequest1 request);
+
+        [OperationContract(Action = "http://ns.esha.com/2013/genesisapi/label/image/getlabelimageforfood",
+            ReplyAction = "http://ns.esha.com/2013/genesisapi/label/image/getlabelimageforfoodresponse")]
+        Task<ImageResponse1> GetLabelImageForFoodAsync(ImageForFoodRequest1 request);
     }
 }
