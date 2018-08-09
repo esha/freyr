@@ -9,7 +9,7 @@ namespace Esha.Genesis.Services.Client.Internal
     [MessageContract(IsWrapped = false)]
     public class ImageByFoodIdRequest1
     {
-        [MessageBodyMember(Namespace = "http://ns.esha.com/2013/genesisapi/label/image", Order = 0)]
+        [MessageBodyMember(Namespace = "http://ns.esha.com/2013/genesisapi", Order = 0)]
         public ImageByFoodIdRequest ImageByFoodIdRequest;
 
         public ImageByFoodIdRequest1()
