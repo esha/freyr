@@ -12,7 +12,8 @@ namespace Esha.Genesis.Services.Client
     {
         private FoodDto _foodField;
 
-        [XmlElement]
+        [XmlElement(typeof(IngredientDto), ElementName = "Ingredient")]
+        [XmlElement(typeof(RecipeDto), ElementName = "Recipe")]
         public FoodDto Food
         {
             get => _foodField;
