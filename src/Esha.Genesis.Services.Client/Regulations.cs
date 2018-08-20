@@ -9,6 +9,6 @@ namespace Esha.Genesis.Services.Client
         public static String Canada2003 => "Canada 2003";
         public static String Canada2016 => "Canada 2016";
         public static String Mexico => "Mexico";
-        public static String EuropeanUntion => "European Union";
+        public static String EuropeanUnion => "European Union";
     }
 }
