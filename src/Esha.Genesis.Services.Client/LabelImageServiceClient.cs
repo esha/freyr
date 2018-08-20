@@ -164,14 +164,14 @@ namespace Esha.Genesis.Services.Client
 
         public ImageResponse GetLabelImageForFood(ImageForFoodRequest imageRequest)
         {
-            var inValue = new ImageForFoodRequest1 { ImageForFoodRequest = imageRequest };
+            var inValue = new ImageForFoodRequest1 {ImageForFoodRequest = imageRequest};
             var retVal = ((ILabelImageService)this).GetLabelImageForFood(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetLabelImageForFoodAsync(ImageForFoodRequest imageRequest)
         {
-            var inValue = new ImageForFoodRequest1 { ImageForFoodRequest = imageRequest };
+            var inValue = new ImageForFoodRequest1 {ImageForFoodRequest = imageRequest};
             var retVal = await ((ILabelImageService)this).GetLabelImageForFoodAsync(inValue);
             return retVal.ImageResponse;
         }

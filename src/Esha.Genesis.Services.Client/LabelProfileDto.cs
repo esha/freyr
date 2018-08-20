@@ -10,17 +10,16 @@ namespace Esha.Genesis.Services.Client
     [XmlType(Namespace = "http://ns.esha.com/2013/exlx")]
     public class LabelProfileDto
     {
+        private GlobalString[] _alternateHeadingField;
         private AuthorityDto _authorityField;
+
+        private LabelFormat _labelFormat;
+
+        private LabelStyle _labelStyleField;
 
         private Guid _recommendationProfileIdField;
 
         private String _regulationField;
-
-        private LabelStyle _labelStyleField;
-
-        private LabelFormat _labelFormat;
-
-        private GlobalString[] _alternateHeadingField;
 
         private GlobalString[] _servingSizeField;
 
