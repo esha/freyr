@@ -11,6 +11,7 @@ namespace Esha.Genesis.Services.Client
     public class LabelProfileDto
     {
         private GlobalString[] _alternateHeadingField;
+
         private AuthorityDto _authorityField;
 
         private LabelFormat _labelFormat;
