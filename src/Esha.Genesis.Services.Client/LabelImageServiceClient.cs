@@ -72,6 +72,12 @@ namespace Esha.Genesis.Services.Client
         [EditorBrowsable(EditorBrowsableState.Advanced)]
         ImageResponse1 ILabelImageService.GetBarcodeImageByFoodId(ImageByFoodIdRequest1 request) => Channel.GetBarcodeImageByFoodId(request);
 
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        Task<ImageResponse1> ILabelImageService.GetLabelImageForFoodAsync(ImageForFoodRequest1 request) => Channel.GetLabelImageForFoodAsync(request);
+
+        [EditorBrowsable(EditorBrowsableState.Advanced)]
+        ImageResponse1 ILabelImageService.GetLabelImageForFood(ImageForFoodRequest1 request) => Channel.GetLabelImageForFood(request);
+
         public ImageResponse GetBarcodeImage(ImageRequest imageRequest)
         {
             var inValue = new ImageRequest1 {ImageRequest = imageRequest};
@@ -153,6 +159,20 @@ namespace Esha.Genesis.Services.Client
         {
             var inValue = new ImageByUserCodeRequest1 {ImageByUserCodeRequest = new ImageByUserCodeRequest {UserCode = userCode}};
             var retVal = await ((ILabelImageService)this).GetLabelImageByUserCodeAsync(inValue);
+            return retVal.ImageResponse;
+        }
+
+        public ImageResponse GetLabelImageForFood(ImageForFoodRequest imageRequest)
+        {
+            var inValue = new ImageForFoodRequest1 {ImageForFoodRequest = imageRequest};
+            var retVal = ((ILabelImageService)this).GetLabelImageForFood(inValue);
+            return retVal.ImageResponse;
+        }
+
+        public async Task<ImageResponse> GetLabelImageForFoodAsync(ImageForFoodRequest imageRequest)
+        {
+            var inValue = new ImageForFoodRequest1 {ImageForFoodRequest = imageRequest};
+            var retVal = await ((ILabelImageService)this).GetLabelImageForFoodAsync(inValue);
             return retVal.ImageResponse;
         }
     }

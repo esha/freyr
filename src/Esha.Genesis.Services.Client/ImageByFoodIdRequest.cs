@@ -7,7 +7,7 @@ namespace Esha.Genesis.Services.Client
     /// <remarks />
     [Serializable]
     [DebuggerStepThrough]
-    [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi/label/image")]
+    [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi")]
     public class ImageByFoodIdRequest
     {
         /// <remarks />
