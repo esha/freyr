@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ServiceModel;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace Esha.Genesis.Services.Client.Internal

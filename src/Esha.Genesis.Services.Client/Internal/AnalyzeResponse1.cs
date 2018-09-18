@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.ServiceModel;
-using System.Text;
 
 namespace Esha.Genesis.Services.Client.Internal
 {

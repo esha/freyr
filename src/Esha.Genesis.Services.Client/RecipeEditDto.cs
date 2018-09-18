@@ -10,9 +10,8 @@ namespace Esha.Genesis.Services.Client
     [XmlType(Namespace = "http://ns.esha.com/2013/exlx")]
     public class RecipeEditDto
     {
-        private RecipeDto _recipeField;
-
         private LabelProfileDto _labelProfileField;
+        private RecipeDto _recipeField;
 
         /// <remarks />
         public RecipeDto Recipe
