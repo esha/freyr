@@ -10,27 +10,26 @@ namespace Esha.Genesis.Services.Client
     [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi")]
     public class NewFoodRequest
     {
-        private FoodDto[] _foodsField;
+        private IngredientsEditDto[] _ingredientsEditsField;
 
-        private NutrientProfileDto[] _nutrientProfilesField;
+        private RecipeEditDto[] _recipeEditsField;
 
         /// <remarks />
         [XmlArray]
-        [XmlArrayItem("Ingredient", typeof(IngredientDto), IsNullable = true)]
-        [XmlArrayItem("Recipe", typeof(RecipeDto), IsNullable = true)]
-        public FoodDto[] Foods
+        [XmlArrayItem("IngredientsEdit")]
+        public IngredientsEditDto[] IngredientsEdits
         {
-            get => _foodsField;
-            set => _foodsField = value;
+            get => _ingredientsEditsField;
+            set => _ingredientsEditsField = value;
         }
 
         /// <remarks />
         [XmlArray]
-        [XmlArrayItem("NutrientProfile")]
-        public NutrientProfileDto[] NutrientProfiles
+        [XmlArrayItem("RecipeEdit")]
+        public RecipeEditDto[] RecipeEdits
         {
-            get => _nutrientProfilesField;
-            set => _nutrientProfilesField = value;
+            get => _recipeEditsField;
+            set => _recipeEditsField = value;
         }
     }
 }
