@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>netstandard1.6;net452</TargetFrameworks>
+        <TargetFrameworks>netstandard1.3</TargetFrameworks>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
         <PackageId>Esha.Genesis.Services.Client</PackageId>
         <Copyright>Copyright © ESHA Research 2018</Copyright>
         <Company>ESHA Research</Company>
-        <Description>Client library for ESHA Research Genesis API</Description>
+        <Description>C# Client library for ESHA Research Genesis API</Description>
         <RepositoryUrl>https://github.com/esha/freyr</RepositoryUrl>
         <Authors>ESHA Research</Authors>
         <RepositoryType></RepositoryType>
@@ -15,7 +15,9 @@
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/esha/freyr</PackageProjectUrl>
         <PackageTags>ESHA Genesis</PackageTags>
-        <Version>1.0.0</Version>
+        <Version>1.1.0</Version>
+        <AssemblyVersion>1.1.0.0</AssemblyVersion>
+        <FileVersion>1.1.0.0</FileVersion>
     </PropertyGroup>
     <ItemGroup>
       <Folder Include="Properties\" />
