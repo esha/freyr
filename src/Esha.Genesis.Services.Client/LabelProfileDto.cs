@@ -20,8 +20,6 @@ namespace Esha.Genesis.Services.Client
 
         private Guid _recommendationProfileIdField;
 
-        private String _regulationField;
-
         private GlobalString[] _servingSizeField;
 
         private GlobalString[] _servingsPerContainerField;
@@ -38,13 +36,6 @@ namespace Esha.Genesis.Services.Client
         {
             get => _recommendationProfileIdField;
             set => _recommendationProfileIdField = value;
-        }
-
-        /// <remarks />
-        public String Regulation
-        {
-            get => _regulationField;
-            set => _regulationField = value;
         }
 
         /// <remarks />

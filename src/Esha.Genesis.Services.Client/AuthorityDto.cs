@@ -18,6 +18,8 @@ namespace Esha.Genesis.Services.Client
 
         private GlobalString[] _nameField;
 
+        private String _regulationField;
+
         /// <remarks />
         [XmlElement]
         public String Iso3166Alpha2
@@ -49,6 +51,13 @@ namespace Esha.Genesis.Services.Client
         {
             get => _nameField;
             set => _nameField = value;
+        }
+
+        /// <remarks />
+        public String Regulation
+        {
+            get => _regulationField;
+            set => _regulationField = value;
         }
     }
 }
