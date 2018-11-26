@@ -79,7 +79,7 @@ namespace Esha.Genesis.Services.Client
 
         private String _ownerNameField;
 
-        private XmlElement _propertyValuesField;
+        private PropertyValuesCollection _propertyValuesField;
 
         private Int32? _usdaCodeField;
 
@@ -360,7 +360,7 @@ namespace Esha.Genesis.Services.Client
 
         /// <remarks />
         [XmlElement]
-        public XmlElement PropertyValues
+        public PropertyValuesCollection PropertyValues
         {
             get => _propertyValuesField;
             set => _propertyValuesField = value;
