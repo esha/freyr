@@ -8,21 +8,22 @@ namespace Esha.Genesis.Services.Client
     [Serializable]
     [DebuggerStepThrough]
     [XmlType(Namespace = "http://ns.esha.com/2013/exlx")]
-    public class Property
+    public class PropertyDto
     {
         private XName[] _domainsField;
 
-        private XName[] _rangesField;
-
         private XName _nameField;
 
-        private Property _subPropertyOfField;
+        private XName[] _rangesField;
 
-        public XName[] Domains 
-        { 
+        private PropertyDto _subPropertyOfField;
+
+        public XName[] Domains
+        {
             get => _domainsField;
             set => _domainsField = value;
         }
+
         public XName[] Ranges
         {
             get => _rangesField;
@@ -35,7 +36,7 @@ namespace Esha.Genesis.Services.Client
             set => _nameField = value;
         }
 
-        public Property SubPropertyOf
+        public PropertyDto SubPropertyOf
         {
             get => _subPropertyOfField;
             set => _subPropertyOfField = value;

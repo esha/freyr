@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml;
 using System.Xml.Linq;
 using System.Xml.Schema;
@@ -10,11 +9,11 @@ namespace Esha.Genesis.Services.Client
 {
     [Serializable]
     [XmlRoot(Namespace = "http://ns.esha.com/2013/exlx")]
-    public class PropertyValuesCollection : IXmlSerializable
+    public class PropertyValuesCollectionDto : IXmlSerializable
     {
-        private List<KeyValuePair<Property, Object>> _values;
-	
-        public List<KeyValuePair<Property, Object>> Values
+        private List<KeyValuePair<PropertyDto, Object>> _values;
+
+        public List<KeyValuePair<PropertyDto, Object>> Values
         {
             get => _values;
             set => _values = value;
@@ -27,12 +26,12 @@ namespace Esha.Genesis.Services.Client
             while (reader.NodeType != XmlNodeType.EndElement)
             {
                 var propertyName = XName.Get(reader.LocalName, reader.NamespaceURI);
-                var property = new Property
+                var property = new PropertyDto
                 {
                     Name = propertyName
                 };
 
-                _values.Add(new KeyValuePair<Property, Object>(property, reader.ReadElementContentAsString()));
+                _values.Add(new KeyValuePair<PropertyDto, Object>(property, reader.ReadElementContentAsString()));
                 reader.MoveToContent();
             }
         }

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Diagnostics;
-using System.Xml;
 using System.Xml.Serialization;
 
 namespace Esha.Genesis.Services.Client
@@ -79,7 +78,7 @@ namespace Esha.Genesis.Services.Client
 
         private String _ownerNameField;
 
-        private PropertyValuesCollection _propertyValuesField;
+        private PropertyValuesCollectionDto _propertyValuesField;
 
         private Int32? _usdaCodeField;
 
@@ -360,7 +359,7 @@ namespace Esha.Genesis.Services.Client
 
         /// <remarks />
         [XmlElement]
-        public PropertyValuesCollection PropertyValues
+        public PropertyValuesCollectionDto PropertyValues
         {
             get => _propertyValuesField;
             set => _propertyValuesField = value;
