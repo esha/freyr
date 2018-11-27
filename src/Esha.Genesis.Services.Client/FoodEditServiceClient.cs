@@ -9,7 +9,7 @@ using Esha.Genesis.Services.Client.Internal;
 namespace Esha.Genesis.Services.Client
 {
     [DebuggerStepThrough]
-    public class FoodEditServiceClient : ClientBase<IFoodEditService>, IFoodEditService
+    public class FoodEditServiceClient : ClientBase<Internal.IFoodEditService>, Internal.IFoodEditService, IFoodEditService
     {
         public FoodEditServiceClient()
         {
@@ -36,42 +36,42 @@ namespace Esha.Genesis.Services.Client
         }
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        NewFoodResponse1 IFoodEditService.NewFood(NewFoodRequest1 request) => Channel.NewFood(request);
+        NewFoodResponse1 Internal.IFoodEditService.NewFood(NewFoodRequest1 request) => Channel.NewFood(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<NewFoodResponse1> IFoodEditService.NewFoodAsync(NewFoodRequest1 request) => Channel.NewFoodAsync(request);
+        Task<NewFoodResponse1> Internal.IFoodEditService.NewFoodAsync(NewFoodRequest1 request) => Channel.NewFoodAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        UpdateFoodResponse1 IFoodEditService.UpdateFood(UpdateFoodRequest1 request) => Channel.UpdateFood(request);
+        UpdateFoodResponse1 Internal.IFoodEditService.UpdateFood(UpdateFoodRequest1 request) => Channel.UpdateFood(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<UpdateFoodResponse1> IFoodEditService.UpdateFoodAsync(UpdateFoodRequest1 request) => Channel.UpdateFoodAsync(request);
+        Task<UpdateFoodResponse1> Internal.IFoodEditService.UpdateFoodAsync(UpdateFoodRequest1 request) => Channel.UpdateFoodAsync(request);
 
         public NewFoodResponse NewFood(NewFoodRequest newFoodRequest)
         {
             var inValue = new NewFoodRequest1 {NewFoodRequest = newFoodRequest};
-            var retVal = ((IFoodEditService)this).NewFood(inValue);
+            var retVal = ((Internal.IFoodEditService)this).NewFood(inValue);
             return retVal.NewFoodResponse;
         }
 
         public async Task<NewFoodResponse> NewFoodAsync(NewFoodRequest newFoodRequest)
         {
             var inValue = new NewFoodRequest1 {NewFoodRequest = newFoodRequest};
-            var retVal = await ((IFoodEditService)this).NewFoodAsync(inValue);
+            var retVal = await ((Internal.IFoodEditService)this).NewFoodAsync(inValue);
             return retVal.NewFoodResponse;
         }
 
         public UpdateFoodResponse UpdateFood(UpdateFoodRequest updateFoodRequest)
         {
             var inValue = new UpdateFoodRequest1 {UpdateFoodRequest = updateFoodRequest};
-            var retVal = ((IFoodEditService)this).UpdateFood(inValue);
+            var retVal = ((Internal.IFoodEditService)this).UpdateFood(inValue);
             return retVal.UpdateFoodResponse;
         }
 
         public async Task<UpdateFoodResponse> UpdateFoodAsync(UpdateFoodRequest updateFoodRequest)
         {
             var inValue = new UpdateFoodRequest1 {UpdateFoodRequest = updateFoodRequest};
-            var retVal = await ((IFoodEditService)this).UpdateFoodAsync(inValue);
+            var retVal = await ((Internal.IFoodEditService)this).UpdateFoodAsync(inValue);
             return retVal.UpdateFoodResponse;
         }
     }

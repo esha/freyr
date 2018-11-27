@@ -11,7 +11,7 @@ using Esha.Genesis.Services.Client.Internal;
 namespace Esha.Genesis.Services.Client
 {
     [DebuggerStepThrough]
-    public class FoodQueryServiceClient : ClientBase<IFoodQueryService>, IFoodQueryService
+    public class FoodQueryServiceClient : ClientBase<Internal.IFoodQueryService>, Internal.IFoodQueryService, IFoodQueryService
     {
         private IDictionary<Guid, NutrientDto> _nutrientDictionary;
 
@@ -40,126 +40,130 @@ namespace Esha.Genesis.Services.Client
         }
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        NutrientListResponse1 IFoodQueryService.ListNutrients(NutrientListRequest1 request) => Channel.ListNutrients(request);
+        NutrientListResponse1 Internal.IFoodQueryService.ListNutrients(NutrientListRequest1 request) => Channel.ListNutrients(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<NutrientListResponse1> IFoodQueryService.ListNutrientsAsync(NutrientListRequest1 request) => Channel.ListNutrientsAsync(request);
+        Task<NutrientListResponse1> Internal.IFoodQueryService.ListNutrientsAsync(NutrientListRequest1 request) => Channel.ListNutrientsAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        UnitListResponse1 IFoodQueryService.ListUnits(UnitListRequest1 request) => Channel.ListUnits(request);
+        UnitListResponse1 Internal.IFoodQueryService.ListUnits(UnitListRequest1 request) => Channel.ListUnits(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<UnitListResponse1> IFoodQueryService.ListUnitsAsync(UnitListRequest1 request) => Channel.ListUnitsAsync(request);
+        Task<UnitListResponse1> Internal.IFoodQueryService.ListUnitsAsync(UnitListRequest1 request) => Channel.ListUnitsAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        AllergenListResponse1 IFoodQueryService.ListAllergens(AllergenListRequest1 request) => Channel.ListAllergens(request);
+        AllergenListResponse1 Internal.IFoodQueryService.ListAllergens(AllergenListRequest1 request) => Channel.ListAllergens(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<AllergenListResponse1> IFoodQueryService.ListAllergensAsync(AllergenListRequest1 request) => Channel.ListAllergensAsync(request);
+        Task<AllergenListResponse1> Internal.IFoodQueryService.ListAllergensAsync(AllergenListRequest1 request) => Channel.ListAllergensAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodsListResponse1 IFoodQueryService.ListFoods(FoodsListRequest1 request) => Channel.ListFoods(request);
+        FoodsListResponse1 Internal.IFoodQueryService.ListFoods(FoodsListRequest1 request) => Channel.ListFoods(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodsListResponse1> IFoodQueryService.ListFoodsAsync(FoodsListRequest1 request) => Channel.ListFoodsAsync(request);
+        Task<FoodsListResponse1> Internal.IFoodQueryService.ListFoodsAsync(FoodsListRequest1 request) => Channel.ListFoodsAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodMetadataResponse1 IFoodQueryService.GetFood(FoodMetadataRequest1 request) => Channel.GetFood(request);
+        FoodMetadataResponse1 Internal.IFoodQueryService.GetFood(FoodMetadataRequest1 request) => Channel.GetFood(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodMetadataResponse1> IFoodQueryService.GetFoodAsync(FoodMetadataRequest1 request) => Channel.GetFoodAsync(request);
+        Task<FoodMetadataResponse1> Internal.IFoodQueryService.GetFoodAsync(FoodMetadataRequest1 request) => Channel.GetFoodAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodMetadataResponse1 IFoodQueryService.GetFoodByFoodId(GetFoodByFoodIdRequest1 request) => Channel.GetFoodByFoodId(request);
+        FoodMetadataResponse1 Internal.IFoodQueryService.GetFoodByFoodId(GetFoodByFoodIdRequest1 request) => Channel.GetFoodByFoodId(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodMetadataResponse1> IFoodQueryService.GetFoodByFoodIdAsync(GetFoodByFoodIdRequest1 request) => Channel.GetFoodByFoodIdAsync(request);
+        Task<FoodMetadataResponse1> Internal.IFoodQueryService.GetFoodByFoodIdAsync(GetFoodByFoodIdRequest1 request) => Channel.GetFoodByFoodIdAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodMetadataResponse1 IFoodQueryService.GetFoodByUserCode(GetFoodByUserCodeRequest1 request) => Channel.GetFoodByUserCode(request);
+        FoodMetadataResponse1 Internal.IFoodQueryService.GetFoodByUserCode(GetFoodByUserCodeRequest1 request) => Channel.GetFoodByUserCode(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodMetadataResponse1> IFoodQueryService.GetFoodByUserCodeAsync(GetFoodByUserCodeRequest1 request) => Channel.GetFoodByUserCodeAsync(request);
+        Task<FoodMetadataResponse1> Internal.IFoodQueryService.GetFoodByUserCodeAsync(GetFoodByUserCodeRequest1 request) =>
+            Channel.GetFoodByUserCodeAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodAnalysisResponse1 IFoodQueryService.GetAnalysis(FoodAnalysisRequest1 request) => Channel.GetAnalysis(request);
+        FoodAnalysisResponse1 Internal.IFoodQueryService.GetAnalysis(FoodAnalysisRequest1 request) => Channel.GetAnalysis(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodAnalysisResponse1> IFoodQueryService.GetAnalysisAsync(FoodAnalysisRequest1 request) => Channel.GetAnalysisAsync(request);
+        Task<FoodAnalysisResponse1> Internal.IFoodQueryService.GetAnalysisAsync(FoodAnalysisRequest1 request) => Channel.GetAnalysisAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodsListResponse1 IFoodQueryService.SearchByGroup(FoodsByGroupRequest1 request) => Channel.SearchByGroup(request);
+        FoodsListResponse1 Internal.IFoodQueryService.SearchByGroup(FoodsByGroupRequest1 request) => Channel.SearchByGroup(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodsListResponse1> IFoodQueryService.SearchByGroupAsync(FoodsByGroupRequest1 request) => Channel.SearchByGroupAsync(request);
+        Task<FoodsListResponse1> Internal.IFoodQueryService.SearchByGroupAsync(FoodsByGroupRequest1 request) => Channel.SearchByGroupAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodsListResponse1 IFoodQueryService.SearchByName(FoodsByNameRequest1 request) => Channel.SearchByName(request);
+        FoodsListResponse1 Internal.IFoodQueryService.SearchByName(FoodsByNameRequest1 request) => Channel.SearchByName(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodsListResponse1> IFoodQueryService.SearchByNameAsync(FoodsByNameRequest1 request) => Channel.SearchByNameAsync(request);
+        Task<FoodsListResponse1> Internal.IFoodQueryService.SearchByNameAsync(FoodsByNameRequest1 request) => Channel.SearchByNameAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodsListResponse1 IFoodQueryService.SearchByModifiedDateRange(FoodsByModifiedDateRangeRequest1 request) => Channel.SearchByModifiedDateRange(request);
+        FoodsListResponse1 Internal.IFoodQueryService.SearchByModifiedDateRange(FoodsByModifiedDateRangeRequest1 request) =>
+            Channel.SearchByModifiedDateRange(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodsListResponse1> IFoodQueryService.SearchByModifiedDateRangeAsync(FoodsByModifiedDateRangeRequest1 request) =>
+        Task<FoodsListResponse1> Internal.IFoodQueryService.SearchByModifiedDateRangeAsync(FoodsByModifiedDateRangeRequest1 request) =>
             Channel.SearchByModifiedDateRangeAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodUserCodesListResponse1 IFoodQueryService.ListFoodUserCodes(FoodUserCodesListRequest1 request) => Channel.ListFoodUserCodes(request);
+        FoodUserCodesListResponse1 Internal.IFoodQueryService.ListFoodUserCodes(FoodUserCodesListRequest1 request) => Channel.ListFoodUserCodes(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodUserCodesListResponse1> IFoodQueryService.ListFoodUserCodesAsync(FoodUserCodesListRequest1 request) => Channel.ListFoodUserCodesAsync(request);
+        Task<FoodUserCodesListResponse1> Internal.IFoodQueryService.ListFoodUserCodesAsync(FoodUserCodesListRequest1 request) =>
+            Channel.ListFoodUserCodesAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        GroupsListResponse1 IFoodQueryService.ListGroups(GroupsListRequest1 request) => Channel.ListGroups(request);
+        GroupsListResponse1 Internal.IFoodQueryService.ListGroups(GroupsListRequest1 request) => Channel.ListGroups(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<GroupsListResponse1> IFoodQueryService.ListGroupsAsync(GroupsListRequest1 request) => Channel.ListGroupsAsync(request);
+        Task<GroupsListResponse1> Internal.IFoodQueryService.ListGroupsAsync(GroupsListRequest1 request) => Channel.ListGroupsAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodConversionsResponse1 IFoodQueryService.GetConversions(FoodMetadataRequest1 request) => Channel.GetConversions(request);
+        FoodConversionsResponse1 Internal.IFoodQueryService.GetConversions(FoodMetadataRequest1 request) => Channel.GetConversions(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodConversionsResponse1> IFoodQueryService.GetConversionsAsync(FoodMetadataRequest1 request) => Channel.GetConversionsAsync(request);
+        Task<FoodConversionsResponse1> Internal.IFoodQueryService.GetConversionsAsync(FoodMetadataRequest1 request) => Channel.GetConversionsAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodsListResponse1 IFoodQueryService.Search(FoodsSearchRequest1 request) => Channel.Search(request);
+        FoodsListResponse1 Internal.IFoodQueryService.Search(FoodsSearchRequest1 request) => Channel.Search(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodsListResponse1> IFoodQueryService.SearchAsync(FoodsSearchRequest1 request) => Channel.SearchAsync(request);
+        Task<FoodsListResponse1> Internal.IFoodQueryService.SearchAsync(FoodsSearchRequest1 request) => Channel.SearchAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        FoodsListResponse1 IFoodQueryService.SearchByProperty(FoodsByPropertyRequest1 request) => Channel.SearchByProperty(request);
+        FoodsListResponse1 Internal.IFoodQueryService.SearchByProperty(FoodsByPropertyRequest1 request) => Channel.SearchByProperty(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<FoodsListResponse1> IFoodQueryService.SearchByPropertyAsync(FoodsByPropertyRequest1 request) => Channel.SearchByPropertyAsync(request);
+        Task<FoodsListResponse1> Internal.IFoodQueryService.SearchByPropertyAsync(FoodsByPropertyRequest1 request) => Channel.SearchByPropertyAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        RecommendationProfilesListResponse1 IFoodQueryService.ListRecommendationProfiles(RecommendationProfilesListRequest1 request) =>
+        RecommendationProfilesListResponse1 Internal.IFoodQueryService.ListRecommendationProfiles(RecommendationProfilesListRequest1 request) =>
             Channel.ListRecommendationProfiles(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<RecommendationProfilesListResponse1> IFoodQueryService.ListRecommendationProfilesAsync(RecommendationProfilesListRequest1 request) =>
+        Task<RecommendationProfilesListResponse1> Internal.IFoodQueryService.ListRecommendationProfilesAsync(RecommendationProfilesListRequest1 request) =>
             Channel.ListRecommendationProfilesAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        AuthoritiesListResponse1 IFoodQueryService.ListAuthorities(AuthoritiesListRequest1 request) => Channel.ListAuthorities(request);
+        AuthoritiesListResponse1 Internal.IFoodQueryService.ListAuthorities(AuthoritiesListRequest1 request) => Channel.ListAuthorities(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<AuthoritiesListResponse1> IFoodQueryService.ListAuthoritiesAsync(AuthoritiesListRequest1 request) => Channel.ListAuthoritiesAsync(request);
+        Task<AuthoritiesListResponse1> Internal.IFoodQueryService.ListAuthoritiesAsync(AuthoritiesListRequest1 request) =>
+            Channel.ListAuthoritiesAsync(request);
 
         public FoodAnalysisResponse GetAnalysis(FoodAnalysisRequest foodAnalysisRequest)
         {
             if (_nutrientDictionary is null)
             {
-                var nutRetVal = ((IFoodQueryService)this).ListNutrients(new NutrientListRequest1 {NutrientListRequest = new NutrientListRequest()});
+                var nutRetVal = ((Internal.IFoodQueryService)this).ListNutrients(new NutrientListRequest1 {NutrientListRequest = new NutrientListRequest()});
                 _nutrientDictionary = createNutrientDictionary(nutRetVal);
             }
 
             var inValue = new FoodAnalysisRequest1 {FoodAnalysisRequest = foodAnalysisRequest};
-            var retVal = ((IFoodQueryService)this).GetAnalysis(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).GetAnalysis(inValue);
 
             return processFoodAnalysisResponse(retVal.FoodAnalysisResponse);
         }
@@ -168,12 +172,15 @@ namespace Esha.Genesis.Services.Client
         {
             if (_nutrientDictionary is null)
             {
-                var nutRetVal = await ((IFoodQueryService)this).ListNutrientsAsync(new NutrientListRequest1 {NutrientListRequest = new NutrientListRequest()});
+                var nutRetVal = await ((Internal.IFoodQueryService)this).ListNutrientsAsync(new NutrientListRequest1
+                {
+                    NutrientListRequest = new NutrientListRequest()
+                });
                 _nutrientDictionary = createNutrientDictionary(nutRetVal);
             }
 
             var inValue = new FoodAnalysisRequest1 {FoodAnalysisRequest = foodAnalysisRequest};
-            var retVal = await ((IFoodQueryService)this).GetAnalysisAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).GetAnalysisAsync(inValue);
 
             return processFoodAnalysisResponse(retVal.FoodAnalysisResponse);
         }
@@ -181,147 +188,147 @@ namespace Esha.Genesis.Services.Client
         public FoodConversionsResponse GetConversions(FoodMetadataRequest foodMetadataRequest)
         {
             var inValue = new FoodMetadataRequest1 {FoodMetadataRequest = foodMetadataRequest};
-            var retVal = ((IFoodQueryService)this).GetConversions(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).GetConversions(inValue);
             return retVal.FoodConversionsResponse;
         }
 
         public async Task<FoodConversionsResponse> GetConversionsAsync(FoodMetadataRequest foodMetadataRequest)
         {
             var inValue = new FoodMetadataRequest1 {FoodMetadataRequest = foodMetadataRequest};
-            var retVal = await ((IFoodQueryService)this).GetConversionsAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).GetConversionsAsync(inValue);
             return retVal.FoodConversionsResponse;
         }
 
         public FoodMetadataResponse GetFood(FoodMetadataRequest foodMetadataRequest)
         {
             var inValue = new FoodMetadataRequest1 {FoodMetadataRequest = foodMetadataRequest};
-            var retVal = ((IFoodQueryService)this).GetFood(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).GetFood(inValue);
             return retVal.FoodMetadataResponse;
         }
 
         public async Task<FoodMetadataResponse> GetFoodAsync(FoodMetadataRequest foodMetadataRequest)
         {
             var inValue = new FoodMetadataRequest1 {FoodMetadataRequest = foodMetadataRequest};
-            var retVal = await ((IFoodQueryService)this).GetFoodAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).GetFoodAsync(inValue);
             return retVal.FoodMetadataResponse;
         }
 
         public FoodMetadataResponse GetFoodByFoodId(Guid foodId)
         {
             var inValue = new GetFoodByFoodIdRequest1 {GetFoodByFoodIdRequest = new GetFoodByFoodIdRequest {FoodId = foodId}};
-            var retVal = ((IFoodQueryService)this).GetFoodByFoodId(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).GetFoodByFoodId(inValue);
             return retVal.FoodMetadataResponse;
         }
 
         public async Task<FoodMetadataResponse> GetFoodByFoodIdAsync(Guid foodId)
         {
             var inValue = new GetFoodByFoodIdRequest1 {GetFoodByFoodIdRequest = new GetFoodByFoodIdRequest {FoodId = foodId}};
-            var retVal = await ((IFoodQueryService)this).GetFoodByFoodIdAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).GetFoodByFoodIdAsync(inValue);
             return retVal.FoodMetadataResponse;
         }
 
         public FoodMetadataResponse GetFoodByUserCode(String userCode)
         {
             var inValue = new GetFoodByUserCodeRequest1 {GetFoodByUserCodeRequest = new GetFoodByUserCodeRequest {UserCode = userCode}};
-            var retVal = ((IFoodQueryService)this).GetFoodByUserCode(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).GetFoodByUserCode(inValue);
             return retVal.FoodMetadataResponse;
         }
 
         public async Task<FoodMetadataResponse> GetFoodByUserCodeAsync(String userCode)
         {
             var inValue = new GetFoodByUserCodeRequest1 {GetFoodByUserCodeRequest = new GetFoodByUserCodeRequest {UserCode = userCode}};
-            var retVal = await ((IFoodQueryService)this).GetFoodByUserCodeAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).GetFoodByUserCodeAsync(inValue);
             return retVal.FoodMetadataResponse;
         }
 
         public AllergenListResponse ListAllergens(AllergenListRequest allergenListRequest)
         {
             var inValue = new AllergenListRequest1 {AllergenListRequest = allergenListRequest};
-            var retVal = ((IFoodQueryService)this).ListAllergens(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListAllergens(inValue);
             return retVal.AllergenListResponse;
         }
 
         public async Task<AllergenListResponse> ListAllergensAsync(AllergenListRequest allergenListRequest)
         {
             var inValue = new AllergenListRequest1 {AllergenListRequest = allergenListRequest};
-            var retVal = await ((IFoodQueryService)this).ListAllergensAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListAllergensAsync(inValue);
             return retVal.AllergenListResponse;
         }
 
         public AuthoritiesListResponse ListAuthorities(AuthoritiesListRequest authoritiesListRequest)
         {
             var inValue = new AuthoritiesListRequest1 {AuthoritiesListRequest = authoritiesListRequest};
-            var retVal = ((IFoodQueryService)this).ListAuthorities(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListAuthorities(inValue);
             return retVal.AuthoritiesListResponse;
         }
 
         public async Task<AuthoritiesListResponse> ListAuthoritiesAsync(AuthoritiesListRequest authoritiesListRequest)
         {
             var inValue = new AuthoritiesListRequest1 {AuthoritiesListRequest = authoritiesListRequest};
-            var retVal = await ((IFoodQueryService)this).ListAuthoritiesAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListAuthoritiesAsync(inValue);
             return retVal.AuthoritiesListResponse;
         }
 
         public FoodsListResponse ListFoods(FoodsListRequest foodsListRequest)
         {
             var inValue = new FoodsListRequest1 {FoodsListRequest = foodsListRequest};
-            var retVal = ((IFoodQueryService)this).ListFoods(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListFoods(inValue);
             return retVal.FoodsListResponse;
         }
 
         public async Task<FoodsListResponse> ListFoodsAsync(FoodsListRequest foodsListRequest)
         {
             var inValue = new FoodsListRequest1 {FoodsListRequest = foodsListRequest};
-            var retVal = await ((IFoodQueryService)this).ListFoodsAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListFoodsAsync(inValue);
             return retVal.FoodsListResponse;
         }
 
         public FoodUserCodesListResponse ListFoodUserCodes(FoodUserCodesListRequest foodUserCodesListRequest)
         {
             var inValue = new FoodUserCodesListRequest1 {FoodUserCodesListRequest = foodUserCodesListRequest};
-            var retVal = ((IFoodQueryService)this).ListFoodUserCodes(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListFoodUserCodes(inValue);
             return retVal.FoodUserCodesListResponse;
         }
 
         public async Task<FoodUserCodesListResponse> ListFoodUserCodesAsync(FoodUserCodesListRequest foodUserCodesListRequest)
         {
             var inValue = new FoodUserCodesListRequest1 {FoodUserCodesListRequest = foodUserCodesListRequest};
-            var retVal = await ((IFoodQueryService)this).ListFoodUserCodesAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListFoodUserCodesAsync(inValue);
             return retVal.FoodUserCodesListResponse;
         }
 
         public GroupsListResponse ListGroups(GroupsListRequest groupsListRequest)
         {
             var inValue = new GroupsListRequest1 {GroupsListRequest = groupsListRequest};
-            var retVal = ((IFoodQueryService)this).ListGroups(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListGroups(inValue);
             return retVal.GroupsListResponse;
         }
 
         public async Task<GroupsListResponse> ListGroupsAsync(GroupsListRequest groupsListRequest)
         {
             var inValue = new GroupsListRequest1 {GroupsListRequest = groupsListRequest};
-            var retVal = await ((IFoodQueryService)this).ListGroupsAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListGroupsAsync(inValue);
             return retVal.GroupsListResponse;
         }
 
         public NutrientListResponse ListNutrients(NutrientListRequest nutrientListRequest)
         {
             var inValue = new NutrientListRequest1 {NutrientListRequest = nutrientListRequest};
-            var retVal = ((IFoodQueryService)this).ListNutrients(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListNutrients(inValue);
             return retVal.NutrientListResponse;
         }
 
         public async Task<NutrientListResponse> ListNutrientsAsync(NutrientListRequest nutrientListRequest)
         {
             var inValue = new NutrientListRequest1 {NutrientListRequest = nutrientListRequest};
-            var retVal = await ((IFoodQueryService)this).ListNutrientsAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListNutrientsAsync(inValue);
             return retVal.NutrientListResponse;
         }
 
         public RecommendationProfilesListResponse ListRecommendationProfiles(RecommendationProfilesListRequest recommendationProfilesListRequest)
         {
             var inValue = new RecommendationProfilesListRequest1 {RecommendationProfilesListRequest = recommendationProfilesListRequest};
-            var retVal = ((IFoodQueryService)this).ListRecommendationProfiles(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListRecommendationProfiles(inValue);
             return retVal.RecommendationProfilesListResponse;
         }
 
@@ -329,91 +336,91 @@ namespace Esha.Genesis.Services.Client
             RecommendationProfilesListRequest recommendationProfilesListRequest)
         {
             var inValue = new RecommendationProfilesListRequest1 {RecommendationProfilesListRequest = recommendationProfilesListRequest};
-            var retVal = await ((IFoodQueryService)this).ListRecommendationProfilesAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListRecommendationProfilesAsync(inValue);
             return retVal.RecommendationProfilesListResponse;
         }
 
         public UnitListResponse ListUnits(UnitListRequest unitListRequest)
         {
             var inValue = new UnitListRequest1 {UnitListRequest = unitListRequest};
-            var retVal = ((IFoodQueryService)this).ListUnits(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).ListUnits(inValue);
             return retVal.UnitListResponse;
         }
 
         public async Task<UnitListResponse> ListUnitsAsync(UnitListRequest unitListRequest)
         {
             var inValue = new UnitListRequest1 {UnitListRequest = unitListRequest};
-            var retVal = await ((IFoodQueryService)this).ListUnitsAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).ListUnitsAsync(inValue);
             return retVal.UnitListResponse;
         }
 
         public FoodsListResponse Search(FoodsSearchRequest foodsSearchRequest)
         {
             var inValue = new FoodsSearchRequest1 {FoodsSearchRequest = foodsSearchRequest};
-            var retVal = ((IFoodQueryService)this).Search(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).Search(inValue);
             return retVal.FoodsListResponse;
         }
 
         public async Task<FoodsListResponse> SearchAsync(FoodsSearchRequest foodsSearchRequest)
         {
             var inValue = new FoodsSearchRequest1 {FoodsSearchRequest = foodsSearchRequest};
-            var retVal = await ((IFoodQueryService)this).SearchAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).SearchAsync(inValue);
             return retVal.FoodsListResponse;
         }
 
         public FoodsListResponse SearchByGroup(FoodsByGroupRequest foodsByGroupRequest)
         {
             var inValue = new FoodsByGroupRequest1 {FoodsByGroupRequest = foodsByGroupRequest};
-            var retVal = ((IFoodQueryService)this).SearchByGroup(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).SearchByGroup(inValue);
             return retVal.FoodsListResponse;
         }
 
         public async Task<FoodsListResponse> SearchByGroupAsync(FoodsByGroupRequest foodsByGroupRequest)
         {
             var inValue = new FoodsByGroupRequest1 {FoodsByGroupRequest = foodsByGroupRequest};
-            var retVal = await ((IFoodQueryService)this).SearchByGroupAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).SearchByGroupAsync(inValue);
             return retVal.FoodsListResponse;
         }
 
         public FoodsListResponse SearchByModifiedDateRange(FoodsByModifiedDateRangeRequest foodsByModifiedDateRangeRequest)
         {
             var inValue = new FoodsByModifiedDateRangeRequest1 {FoodsByModifiedDateRangeRequest = foodsByModifiedDateRangeRequest};
-            var retVal = ((IFoodQueryService)this).SearchByModifiedDateRange(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).SearchByModifiedDateRange(inValue);
             return retVal.FoodsListResponse;
         }
 
         public async Task<FoodsListResponse> SearchByModifiedDateRangeAsync(FoodsByModifiedDateRangeRequest foodsByModifiedDateRangeRequest)
         {
             var inValue = new FoodsByModifiedDateRangeRequest1 {FoodsByModifiedDateRangeRequest = foodsByModifiedDateRangeRequest};
-            var retVal = await ((IFoodQueryService)this).SearchByModifiedDateRangeAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).SearchByModifiedDateRangeAsync(inValue);
             return retVal.FoodsListResponse;
         }
 
         public FoodsListResponse SearchByName(FoodsByNameRequest foodsByNameRequest)
         {
             var inValue = new FoodsByNameRequest1 {FoodsByNameRequest = foodsByNameRequest};
-            var retVal = ((IFoodQueryService)this).SearchByName(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).SearchByName(inValue);
             return retVal.FoodsListResponse;
         }
 
         public async Task<FoodsListResponse> SearchByNameAsync(FoodsByNameRequest foodsByNameRequest)
         {
             var inValue = new FoodsByNameRequest1 {FoodsByNameRequest = foodsByNameRequest};
-            var retVal = await ((IFoodQueryService)this).SearchByNameAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).SearchByNameAsync(inValue);
             return retVal.FoodsListResponse;
         }
 
         public FoodsListResponse SearchByProperty(FoodsByPropertyRequest foodsByPropertyRequest)
         {
             var inValue = new FoodsByPropertyRequest1 {FoodsByPropertyRequest = foodsByPropertyRequest};
-            var retVal = ((IFoodQueryService)this).SearchByProperty(inValue);
+            var retVal = ((Internal.IFoodQueryService)this).SearchByProperty(inValue);
             return retVal.FoodsListResponse;
         }
 
         public async Task<FoodsListResponse> SearchByPropertyAsync(FoodsByPropertyRequest foodsByPropertyRequest)
         {
             var inValue = new FoodsByPropertyRequest1 {FoodsByPropertyRequest = foodsByPropertyRequest};
-            var retVal = await ((IFoodQueryService)this).SearchByPropertyAsync(inValue);
+            var retVal = await ((Internal.IFoodQueryService)this).SearchByPropertyAsync(inValue);
             return retVal.FoodsListResponse;
         }
 

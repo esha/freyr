@@ -9,7 +9,7 @@ using Esha.Genesis.Services.Client.Internal;
 namespace Esha.Genesis.Services.Client
 {
     [DebuggerStepThrough]
-    public class LabelImageServiceClient : ClientBase<ILabelImageService>, ILabelImageService
+    public class LabelImageServiceClient : ClientBase<Internal.ILabelImageService>, Internal.ILabelImageService, ILabelImageService
     {
         public LabelImageServiceClient()
         {
@@ -36,143 +36,146 @@ namespace Esha.Genesis.Services.Client
         }
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        ImageResponse1 ILabelImageService.GetBarcodeImage(ImageRequest1 request) => Channel.GetBarcodeImage(request);
+        ImageResponse1 Internal.ILabelImageService.GetBarcodeImage(ImageRequest1 request) => Channel.GetBarcodeImage(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<ImageResponse1> ILabelImageService.GetBarcodeImageAsync(ImageRequest1 request) => Channel.GetBarcodeImageAsync(request);
+        Task<ImageResponse1> Internal.ILabelImageService.GetBarcodeImageAsync(ImageRequest1 request) => Channel.GetBarcodeImageAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        ImageResponse1 ILabelImageService.GetLabelImage(ImageRequest1 request) => Channel.GetLabelImage(request);
+        ImageResponse1 Internal.ILabelImageService.GetLabelImage(ImageRequest1 request) => Channel.GetLabelImage(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<ImageResponse1> ILabelImageService.GetLabelImageAsync(ImageRequest1 request) => Channel.GetLabelImageAsync(request);
+        Task<ImageResponse1> Internal.ILabelImageService.GetLabelImageAsync(ImageRequest1 request) => Channel.GetLabelImageAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        ImageResponse1 ILabelImageService.GetLabelImageByUserCode(ImageByUserCodeRequest1 request) => Channel.GetLabelImageByUserCode(request);
+        ImageResponse1 Internal.ILabelImageService.GetLabelImageByUserCode(ImageByUserCodeRequest1 request) => Channel.GetLabelImageByUserCode(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<ImageResponse1> ILabelImageService.GetLabelImageByUserCodeAsync(ImageByUserCodeRequest1 request) => Channel.GetLabelImageByUserCodeAsync(request);
+        Task<ImageResponse1> Internal.ILabelImageService.GetLabelImageByUserCodeAsync(ImageByUserCodeRequest1 request) =>
+            Channel.GetLabelImageByUserCodeAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        ImageResponse1 ILabelImageService.GetLabelImageByFoodId(ImageByFoodIdRequest1 request) => Channel.GetLabelImageByFoodId(request);
+        ImageResponse1 Internal.ILabelImageService.GetLabelImageByFoodId(ImageByFoodIdRequest1 request) => Channel.GetLabelImageByFoodId(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<ImageResponse1> ILabelImageService.GetLabelImageByFoodIdAsync(ImageByFoodIdRequest1 request) => Channel.GetLabelImageByFoodIdAsync(request);
+        Task<ImageResponse1> Internal.ILabelImageService.GetLabelImageByFoodIdAsync(ImageByFoodIdRequest1 request) =>
+            Channel.GetLabelImageByFoodIdAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        ImageResponse1 ILabelImageService.GetBarcodeImageByUserCode(ImageByUserCodeRequest1 request) => Channel.GetBarcodeImageByUserCode(request);
+        ImageResponse1 Internal.ILabelImageService.GetBarcodeImageByUserCode(ImageByUserCodeRequest1 request) => Channel.GetBarcodeImageByUserCode(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<ImageResponse1> ILabelImageService.GetBarcodeImageByUserCodeAsync(ImageByUserCodeRequest1 request) =>
+        Task<ImageResponse1> Internal.ILabelImageService.GetBarcodeImageByUserCodeAsync(ImageByUserCodeRequest1 request) =>
             Channel.GetBarcodeImageByUserCodeAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<ImageResponse1> ILabelImageService.GetBarcodeImageByFoodIdAsync(ImageByFoodIdRequest1 request) => Channel.GetBarcodeImageByFoodIdAsync(request);
+        Task<ImageResponse1> Internal.ILabelImageService.GetBarcodeImageByFoodIdAsync(ImageByFoodIdRequest1 request) =>
+            Channel.GetBarcodeImageByFoodIdAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        ImageResponse1 ILabelImageService.GetBarcodeImageByFoodId(ImageByFoodIdRequest1 request) => Channel.GetBarcodeImageByFoodId(request);
+        ImageResponse1 Internal.ILabelImageService.GetBarcodeImageByFoodId(ImageByFoodIdRequest1 request) => Channel.GetBarcodeImageByFoodId(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<ImageResponse1> ILabelImageService.GetLabelImageForFoodAsync(ImageForFoodRequest1 request) => Channel.GetLabelImageForFoodAsync(request);
+        Task<ImageResponse1> Internal.ILabelImageService.GetLabelImageForFoodAsync(ImageForFoodRequest1 request) => Channel.GetLabelImageForFoodAsync(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        ImageResponse1 ILabelImageService.GetLabelImageForFood(ImageForFoodRequest1 request) => Channel.GetLabelImageForFood(request);
+        ImageResponse1 Internal.ILabelImageService.GetLabelImageForFood(ImageForFoodRequest1 request) => Channel.GetLabelImageForFood(request);
 
         public ImageResponse GetBarcodeImage(ImageRequest imageRequest)
         {
             var inValue = new ImageRequest1 {ImageRequest = imageRequest};
-            var retVal = ((ILabelImageService)this).GetBarcodeImage(inValue);
+            var retVal = ((Internal.ILabelImageService)this).GetBarcodeImage(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetBarcodeImageAsync(ImageRequest imageRequest)
         {
             var inValue = new ImageRequest1 {ImageRequest = imageRequest};
-            var retVal = await ((ILabelImageService)this).GetBarcodeImageAsync(inValue);
+            var retVal = await ((Internal.ILabelImageService)this).GetBarcodeImageAsync(inValue);
             return retVal.ImageResponse;
         }
 
         public ImageResponse GetLabelImage(ImageRequest imageRequest)
         {
             var inValue = new ImageRequest1 {ImageRequest = imageRequest};
-            var retVal = ((ILabelImageService)this).GetLabelImage(inValue);
+            var retVal = ((Internal.ILabelImageService)this).GetLabelImage(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetLabelImageAsync(ImageRequest imageRequest)
         {
             var inValue = new ImageRequest1 {ImageRequest = imageRequest};
-            var retVal = await ((ILabelImageService)this).GetLabelImageAsync(inValue);
+            var retVal = await ((Internal.ILabelImageService)this).GetLabelImageAsync(inValue);
             return retVal.ImageResponse;
         }
 
         public ImageResponse GetBarcodeImageByFoodId(Guid foodId)
         {
             var inValue = new ImageByFoodIdRequest1 {ImageByFoodIdRequest = new ImageByFoodIdRequest {FoodId = foodId}};
-            var retVal = ((ILabelImageService)this).GetBarcodeImageByFoodId(inValue);
+            var retVal = ((Internal.ILabelImageService)this).GetBarcodeImageByFoodId(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetBarcodeImageByFoodIdAsync(Guid foodId)
         {
             var inValue = new ImageByFoodIdRequest1 {ImageByFoodIdRequest = new ImageByFoodIdRequest {FoodId = foodId}};
-            var retVal = await ((ILabelImageService)this).GetBarcodeImageByFoodIdAsync(inValue);
+            var retVal = await ((Internal.ILabelImageService)this).GetBarcodeImageByFoodIdAsync(inValue);
             return retVal.ImageResponse;
         }
 
         public ImageResponse GetBarcodeImageByUserCode(String userCode)
         {
             var inValue = new ImageByUserCodeRequest1 {ImageByUserCodeRequest = new ImageByUserCodeRequest {UserCode = userCode}};
-            var retVal = ((ILabelImageService)this).GetBarcodeImageByUserCode(inValue);
+            var retVal = ((Internal.ILabelImageService)this).GetBarcodeImageByUserCode(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetBarcodeImageByUserCodeAsync(String userCode)
         {
             var inValue = new ImageByUserCodeRequest1 {ImageByUserCodeRequest = new ImageByUserCodeRequest {UserCode = userCode}};
-            var retVal = await ((ILabelImageService)this).GetBarcodeImageByUserCodeAsync(inValue);
+            var retVal = await ((Internal.ILabelImageService)this).GetBarcodeImageByUserCodeAsync(inValue);
             return retVal.ImageResponse;
         }
 
         public ImageResponse GetLabelImageByFoodId(Guid foodId)
         {
             var inValue = new ImageByFoodIdRequest1 {ImageByFoodIdRequest = new ImageByFoodIdRequest {FoodId = foodId}};
-            var retVal = ((ILabelImageService)this).GetLabelImageByFoodId(inValue);
+            var retVal = ((Internal.ILabelImageService)this).GetLabelImageByFoodId(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetLabelImageByFoodIdAsync(Guid foodId)
         {
             var inValue = new ImageByFoodIdRequest1 {ImageByFoodIdRequest = new ImageByFoodIdRequest {FoodId = foodId}};
-            var retVal = await ((ILabelImageService)this).GetLabelImageByFoodIdAsync(inValue);
+            var retVal = await ((Internal.ILabelImageService)this).GetLabelImageByFoodIdAsync(inValue);
             return retVal.ImageResponse;
         }
 
         public ImageResponse GetLabelImageByUserCode(String userCode)
         {
             var inValue = new ImageByUserCodeRequest1 {ImageByUserCodeRequest = new ImageByUserCodeRequest {UserCode = userCode}};
-            var retVal = ((ILabelImageService)this).GetLabelImageByUserCode(inValue);
+            var retVal = ((Internal.ILabelImageService)this).GetLabelImageByUserCode(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetLabelImageByUserCodeAsync(String userCode)
         {
             var inValue = new ImageByUserCodeRequest1 {ImageByUserCodeRequest = new ImageByUserCodeRequest {UserCode = userCode}};
-            var retVal = await ((ILabelImageService)this).GetLabelImageByUserCodeAsync(inValue);
+            var retVal = await ((Internal.ILabelImageService)this).GetLabelImageByUserCodeAsync(inValue);
             return retVal.ImageResponse;
         }
 
         public ImageResponse GetLabelImageForFood(ImageForFoodRequest imageRequest)
         {
             var inValue = new ImageForFoodRequest1 {ImageForFoodRequest = imageRequest};
-            var retVal = ((ILabelImageService)this).GetLabelImageForFood(inValue);
+            var retVal = ((Internal.ILabelImageService)this).GetLabelImageForFood(inValue);
             return retVal.ImageResponse;
         }
 
         public async Task<ImageResponse> GetLabelImageForFoodAsync(ImageForFoodRequest imageRequest)
         {
             var inValue = new ImageForFoodRequest1 {ImageForFoodRequest = imageRequest};
-            var retVal = await ((ILabelImageService)this).GetLabelImageForFoodAsync(inValue);
+            var retVal = await ((Internal.ILabelImageService)this).GetLabelImageForFoodAsync(inValue);
             return retVal.ImageResponse;
         }
     }

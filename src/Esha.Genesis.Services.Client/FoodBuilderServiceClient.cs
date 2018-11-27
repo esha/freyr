@@ -9,7 +9,7 @@ using Esha.Genesis.Services.Client.Internal;
 namespace Esha.Genesis.Services.Client
 {
     [DebuggerStepThrough]
-    public class FoodBuilderServiceClient : ClientBase<IFoodBuilderService>, IFoodBuilderService
+    public class FoodBuilderServiceClient : ClientBase<Internal.IFoodBuilderService>, Internal.IFoodBuilderService, IFoodBuilderService
     {
         public FoodBuilderServiceClient()
         {
@@ -36,22 +36,22 @@ namespace Esha.Genesis.Services.Client
         }
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        AnalyzeResponse1 IFoodBuilderService.Analyze(AnalyzeRequest1 request) => Channel.Analyze(request);
+        AnalyzeResponse1 Internal.IFoodBuilderService.Analyze(AnalyzeRequest1 request) => Channel.Analyze(request);
 
         [EditorBrowsable(EditorBrowsableState.Advanced)]
-        Task<AnalyzeResponse1> IFoodBuilderService.AnalyzeAsync(AnalyzeRequest1 request) => Channel.AnalyzeAsync(request);
+        Task<AnalyzeResponse1> Internal.IFoodBuilderService.AnalyzeAsync(AnalyzeRequest1 request) => Channel.AnalyzeAsync(request);
 
         public AnalyzeResponse Analyze(AnalyzeRequest analyzeRequest)
         {
             var inValue = new AnalyzeRequest1 {AnalyzeRequest = analyzeRequest};
-            var retVal = ((IFoodBuilderService)this).Analyze(inValue);
+            var retVal = ((Internal.IFoodBuilderService)this).Analyze(inValue);
             return retVal.AnalyzeResponse;
         }
 
         public async Task<AnalyzeResponse> AnalyzeAsync(AnalyzeRequest analyzeRequest)
         {
             var inValue = new AnalyzeRequest1 {AnalyzeRequest = analyzeRequest};
-            var retVal = await ((IFoodBuilderService)this).AnalyzeAsync(inValue);
+            var retVal = await ((Internal.IFoodBuilderService)this).AnalyzeAsync(inValue);
             return retVal.AnalyzeResponse;
         }
     }
