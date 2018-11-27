@@ -11,13 +11,15 @@
         <Authors>ESHA Research</Authors>
         <RepositoryType></RepositoryType>
         <PackageLicenseUrl>https://github.com/esha/freyr/blob/master/LICENSE</PackageLicenseUrl>
-        <SignAssembly>false</SignAssembly>
+        <SignAssembly>true</SignAssembly>
         <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
         <PackageProjectUrl>https://github.com/esha/freyr</PackageProjectUrl>
         <PackageTags>ESHA Genesis</PackageTags>
         <Version>2.0.1-beta</Version>
         <AssemblyVersion>2.0.1.0</AssemblyVersion>
         <FileVersion>2.0.1.0</FileVersion>
+        <AssemblyOriginatorKeyFile>freyr.snk</AssemblyOriginatorKeyFile>
+        <DelaySign>false</DelaySign>
     </PropertyGroup>
     <ItemGroup>
       <Folder Include="Properties\" />
