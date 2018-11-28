@@ -23,6 +23,15 @@ namespace Esha.Genesis.Services.Client
 
         void IXmlSerializable.ReadXml(XmlReader reader)
         {
+            var isEmpty = reader.IsEmptyElement;
+
+            reader.Read();
+
+            if (isEmpty)
+            {
+                return;
+            }
+
             while (reader.NodeType != XmlNodeType.EndElement)
             {
                 var propertyName = XName.Get(reader.LocalName, reader.NamespaceURI);
@@ -32,8 +41,10 @@ namespace Esha.Genesis.Services.Client
                 };
 
                 _values.Add(new KeyValuePair<PropertyDto, Object>(property, reader.ReadElementContentAsString()));
-                reader.MoveToContent();
             }
+
+            reader.MoveToContent();
+            reader.ReadEndElement();
         }
 
         void IXmlSerializable.WriteXml(XmlWriter writer)
