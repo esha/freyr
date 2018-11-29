@@ -15,7 +15,7 @@ namespace Esha.Genesis.Services.Client
 
         public List<KeyValuePair<PropertyDto, Object>> Values
         {
-            get => _values;
+            get => _values ?? (_values = new List<KeyValuePair<PropertyDto, Object>>());
             set => _values = value;
         }
 
@@ -25,7 +25,7 @@ namespace Esha.Genesis.Services.Client
         {
             var isEmpty = reader.IsEmptyElement;
 
-            reader.Read();
+            reader.ReadStartElement();
 
             if (isEmpty)
             {
@@ -40,7 +40,7 @@ namespace Esha.Genesis.Services.Client
                     Name = propertyName
                 };
 
-                _values.Add(new KeyValuePair<PropertyDto, Object>(property, reader.ReadElementContentAsString()));
+                Values.Add(new KeyValuePair<PropertyDto, Object>(property, reader.ReadElementContentAsString()));
             }
 
             reader.MoveToContent();
@@ -49,7 +49,7 @@ namespace Esha.Genesis.Services.Client
 
         void IXmlSerializable.WriteXml(XmlWriter writer)
         {
-            foreach (var kvp in _values)
+            foreach (var kvp in Values)
             {
                 var property = kvp.Key;
                 writer.WriteElementString(property.Name.LocalName, property.Name.NamespaceName, kvp.Value.ToString());
