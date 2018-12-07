@@ -52,7 +52,7 @@ namespace Esha.Genesis.Services.Client
             foreach (var kvp in Values)
             {
                 var property = kvp.Key;
-                writer.WriteElementString(property.Name.LocalName, property.Name.NamespaceName, kvp.Value.ToString());
+                writer.WriteElementString(property.Name.LocalName, property.Name.NamespaceName, kvp.Value?.ToString());
             }
         }
     }
