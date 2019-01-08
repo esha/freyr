@@ -10,6 +10,7 @@ namespace Esha.Genesis.Services.Client
     [XmlType(Namespace = "http://ns.esha.com/2013/exlx")]
     public class IngredientsEditDto
     {
+        private EditDetailsDto _editDetailsField;
         private IngredientDto[] _ingredientsField;
 
         private NutrientProfileDto _nutrientProfileField;
@@ -26,6 +27,13 @@ namespace Esha.Genesis.Services.Client
         {
             get => _nutrientProfileField;
             set => _nutrientProfileField = value;
+        }
+
+        /// <remarks />
+        public EditDetailsDto EditDetails
+        {
+            get => _editDetailsField;
+            set => _editDetailsField = value;
         }
     }
 }
