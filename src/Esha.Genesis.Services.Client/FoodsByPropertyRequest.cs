@@ -15,9 +15,9 @@ namespace Esha.Genesis.Services.Client
 
         private PublicationState[] _filterByPublicationStatesField;
 
-        private PropertyUriDto[] _propertyFilterField;
-
         private Int32? _pageSizeField;
+
+        private PropertyUriDto[] _propertyFilterField;
 
         private PropertyValue[] _propertyValueFilterField;
 
