@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Text;
 using System.Xml.Serialization;
 
 namespace Esha.Genesis.Services.Client
@@ -29,6 +27,6 @@ namespace Esha.Genesis.Services.Client
         }
 
         /// <remarks />
-        public override string ToString() => Value;
+        public override String ToString() => Value;
     }
 }
