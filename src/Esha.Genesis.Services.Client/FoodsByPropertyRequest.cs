@@ -15,11 +15,11 @@ namespace Esha.Genesis.Services.Client
 
         private PublicationState[] _filterByPublicationStatesField;
 
-        private String[] _hasPropertiesField;
+        private PropertyUriDto[] _propertyFilterField;
 
         private Int32? _pageSizeField;
 
-        private PropertyFilter[] _propertyFiltersField;
+        private PropertyValue[] _propertyValueFilterField;
 
         private Int32? _startIndexField;
 
@@ -51,10 +51,10 @@ namespace Esha.Genesis.Services.Client
         /// <remarks />
         [XmlArray]
         [XmlArrayItem("PropertyUri", IsNullable = false)]
-        public String[] HasProperties
+        public PropertyUriDto[] PropertyFilter
         {
-            get => _hasPropertiesField;
-            set => _hasPropertiesField = value;
+            get => _propertyFilterField;
+            set => _propertyFilterField = value;
         }
 
         /// <remarks />
@@ -75,11 +75,11 @@ namespace Esha.Genesis.Services.Client
 
         /// <remarks />
         [XmlArray]
-        [XmlArrayItem("Filter", IsNullable = false)]
-        public PropertyFilter[] PropertyFilters
+        [XmlArrayItem("PropertyValue", IsNullable = false)]
+        public PropertyValue[] PropertyValueFilter
         {
-            get => _propertyFiltersField;
-            set => _propertyFiltersField = value;
+            get => _propertyValueFilterField;
+            set => _propertyValueFilterField = value;
         }
     }
 }

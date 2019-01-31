@@ -8,15 +8,15 @@ namespace Esha.Genesis.Services.Client
     [Serializable]
     [DebuggerStepThrough]
     [XmlType(Namespace = "http://ns.esha.com/2013/genesisapi")]
-    public class PropertyFilter
+    public class PropertyValue
     {
-        private String _propertyUriField;
+        private PropertyUriDto _propertyUriField;
 
         private String _valueField;
 
         /// <remarks />
         [XmlElement]
-        public String PropertyUri
+        public PropertyUriDto PropertyUri
         {
             get => _propertyUriField;
             set => _propertyUriField = value;
