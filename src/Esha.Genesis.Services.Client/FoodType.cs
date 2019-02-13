@@ -12,6 +12,9 @@ namespace Esha.Genesis.Services.Client
         Ingredient,
 
         /// <remarks />
-        Recipe
+        Recipe,
+
+        /// <remark />
+        CompositeIngredient = 50
     }
 }

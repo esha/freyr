@@ -10,9 +10,20 @@ namespace Esha.Genesis.Services.Client
     [XmlType(AnonymousType = true, Namespace = "http://ns.esha.com/2013/genesisapi")]
     public class UpdateFoodRequest
     {
+        private CompositeIngredientEditDto[] _compositeIngredientEditsField;
+
         private IngredientsEditDto[] _ingredientsEditsField;
 
         private RecipeEditDto[] _recipeEditsField;
+
+        /// <remarks />
+        [XmlArray]
+        [XmlArrayItem("CompositeIngredientEdit")]
+        public CompositeIngredientEditDto[] CompositeIngredientEdits
+        {
+            get => _compositeIngredientEditsField;
+            set => _compositeIngredientEditsField = value;
+        }
 
         /// <remarks />
         [XmlArray]

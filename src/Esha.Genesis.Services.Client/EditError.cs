@@ -17,6 +17,7 @@ namespace Esha.Genesis.Services.Client
         /// <remarks />
         [XmlElement("Ingredient", typeof(IngredientDto))]
         [XmlElement("Recipe", typeof(RecipeDto))]
+        [XmlElement("CompositeIngredient", typeof(CompositeIngredientDto))]
         public FoodDto Food
         {
             get => _foodField;

@@ -23,6 +23,7 @@ namespace Esha.Genesis.Services.Client
         /// <remarks />
         [XmlElement("Ingredient", typeof(IngredientDto))]
         [XmlElement("Recipe", typeof(RecipeDto))]
+        [XmlElement("CompositeIngredient", typeof(CompositeIngredientDto))]
         public FoodDto Food
         {
             get => _foodField;
@@ -33,6 +34,7 @@ namespace Esha.Genesis.Services.Client
         [XmlArray]
         [XmlArrayItem("Ingredient", typeof(IngredientDto), IsNullable = true)]
         [XmlArrayItem("Recipe", typeof(RecipeDto), IsNullable = true)]
+        [XmlArrayItem("CompositeIngredient", typeof(CompositeIngredientDto), IsNullable = true)]
         public FoodDto[] FoodItems
         {
             get => _foodItemsField;

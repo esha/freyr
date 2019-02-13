@@ -41,6 +41,7 @@ namespace Esha.Genesis.Services.Client
         [XmlArray]
         [XmlArrayItem("Ingredient", typeof(IngredientDto), IsNullable = true)]
         [XmlArrayItem("Recipe", typeof(RecipeDto), IsNullable = true)]
+        [XmlArrayItem("CompositeIngredient", typeof(CompositeIngredientDto), IsNullable = true)]
         public FoodDto[] Foods
         {
             get => _foodsField;
