@@ -7,3 +7,4 @@ To see examples on how to use the various services, please visit the links below
 * [FoodEditService](https://github.com/esha/freyr/wiki/FoodEditService)
 * [FoodQueryService](https://github.com/esha/freyr/wiki/FoodQueryService)
 * [LabelImageService](https://github.com/esha/freyr/wiki/LabelImageService)
+* [FoodBuilderService](https://github.com/esha/freyr/wiki/FoodBuilderService)
